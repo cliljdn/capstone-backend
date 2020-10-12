@@ -15,6 +15,7 @@ class Accounts extends Model {
 		const DriverProfile = require('./DriverProfile.model')
 		const UserProfile = require('./UserProfile.model')
 		const TravelHistory = require('./TravelHistory.model')
+		const Companions = require('./Companion_Table.model')
 		return {
 			UserProfile: {
 				relation: Model.HasOneRelation,
@@ -49,6 +50,15 @@ class Accounts extends Model {
 				join: {
 					from: tableNames.accounts_table + '.account_id',
 					to: tableNames.travel_history + '.account_id',
+				},
+			},
+
+			Companions: {
+				relation: Model.HasManyRelation,
+				modelClass: Companions,
+				join: {
+					from: tableNames.accounts_table + '.account_id',
+					to: tableNames.companion_table + '.account_id',
 				},
 			},
 		}
