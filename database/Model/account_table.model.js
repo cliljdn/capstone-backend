@@ -61,6 +61,14 @@ class Accounts extends Model {
 					to: tableNames.companion_table + '.account_id',
 				},
 			},
+			ParentIdForCompanions: {
+				relation: Model.HasOneRelation,
+				modelClass: Companions,
+				join: {
+					from: tableNames.accounts_table + '.account_id',
+					to: tableNames.companion_table + '.parentId',
+				},
+			},
 		}
 	}
 }
