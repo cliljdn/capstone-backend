@@ -35,10 +35,11 @@ app.get('/', (req, res) => {
 
 // constants for endpoints
 const accountEnpoints = require('./lib/Endpoints/accounts/accounts.api')
+const establishmentEndpoint = require('./lib/Endpoints/establishments/establishment.api')
 
 // mounts endpoints
 app.use('/api/v1', accountEnpoints)
-
+app.use('/api/v1', establishmentEndpoint)
 // constants for Model
 const knexConfig = require('./knexfile')
 const Knex = require('knex')
