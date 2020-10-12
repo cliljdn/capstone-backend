@@ -11,6 +11,7 @@ exports.seed = function (knex) {
 					color: 'Yellow',
 					vehicle_type: 'Jeepney',
 					body_number: '2214',
+					isActive: true,
 					vehicle_owner: 1,
 				},
 				{
@@ -18,6 +19,7 @@ exports.seed = function (knex) {
 					color: 'Red',
 					vehicle_type: 'Jeepney',
 					body_number: '2214',
+					isActive: true,
 					vehicle_owner: 2,
 				},
 			])

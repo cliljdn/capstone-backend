@@ -101,6 +101,7 @@ exports.up = async function (knex) {
 		table.string('color')
 		table.string('vehicle_type')
 		table.string('body_number')
+		table.boolean('isActive')
 		table
 			.integer('vehicle_owner')
 			.unsigned()
