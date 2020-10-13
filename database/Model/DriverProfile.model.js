@@ -13,11 +13,13 @@ class DriverProfile extends Model {
 	static get relationMappings() {
 		const DriverVehicles = require('./Vehicle.model')
 		return {
-			relation: Model.HasManyRelation,
-			modelClass: DriverVehicles,
-			join: {
-				from: tableNames.driver_profile + '.driver_id',
-				to: tableNames.vehicle_table + '.vehicle_id',
+			DriverVehicles: {
+				relation: Model.HasManyRelation,
+				modelClass: DriverVehicles,
+				join: {
+					from: tableNames.driver_profile + '.driver_id',
+					to: tableNames.vehicle_table + '.vehicle_owner',
+				},
 			},
 		}
 	}
