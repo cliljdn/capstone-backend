@@ -17,6 +17,7 @@ exports.up = async function (knex) {
 			.references('account_id')
 			.inTable(tableNames.accounts_table)
 			.onDelete('cascade')
+			
 		table.timestamps(true, true)
 	})
 

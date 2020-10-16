@@ -44,29 +44,21 @@ class Accounts extends Model {
 				},
 			},
 
+			Companions: {
+				relation: Model.HasManyRelation,
+				modelClass: Companions,
+				join: {
+					from: tableNames.accounts_table + '.account_id',
+					to: tableNames.companion_table + '.parent_id',
+				},
+			},
+
 			TravelHistory: {
 				relation: Model.HasManyRelation,
 				modelClass: TravelHistory,
 				join: {
 					from: tableNames.accounts_table + '.account_id',
 					to: tableNames.travel_history + '.account_id',
-				},
-			},
-
-			Companions: {
-				relation: Model.HasManyRelation,
-				modelClass: Companions,
-				join: {
-					from: tableNames.accounts_table + '.account_id',
-					to: tableNames.companion_table + '.account_id',
-				},
-			},
-			ParentIdForCompanions: {
-				relation: Model.HasOneRelation,
-				modelClass: Companions,
-				join: {
-					from: tableNames.accounts_table + '.account_id',
-					to: tableNames.companion_table + '.parentId',
 				},
 			},
 		}
