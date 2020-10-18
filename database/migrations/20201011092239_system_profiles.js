@@ -66,6 +66,7 @@ exports.up = async function (knex) {
 		table.string('telephone_number')
 		table.string('establishment_owner')
 		table.string('email')
+		table.boolean('isActive')
 	})
 
 	await knex.schema.createTable(tableNames.employee_profile, function (table) {

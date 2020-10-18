@@ -12,6 +12,7 @@ exports.seed = function (knex) {
 					telephone_number: '223-9020',
 					establishment_owner: 'Donald khan',
 					email: 'jollibeeulongapo@gmail.com',
+					isActive: true,
 				},
 				{
 					name: 'Mcdonald magsaysay drive',
@@ -19,6 +20,7 @@ exports.seed = function (knex) {
 					telephone_number: '223-8383',
 					establishment_owner: 'Macdo',
 					email: 'Mcdonaldmagsaysay@gmail.com',
+					isActive: true,
 				},
 			])
 		})

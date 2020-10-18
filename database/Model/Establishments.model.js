@@ -6,6 +6,10 @@ class Establishments extends Model {
 		return tableConstants.establishments
 	}
 
+	static get idColumn() {
+		return 'establishment_id'
+	}
+
 	static get relationMappings() {
 		const Employees = require('./account_table.model')
 		return {
