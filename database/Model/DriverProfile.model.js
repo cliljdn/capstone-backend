@@ -12,10 +12,7 @@ class DriverProfile extends Model {
 
 	static get relationMappings() {
 		const DriverVehicles = require('./Vehicle.model')
-<<<<<<< HEAD
-=======
 		const Passengers = require('./Passengers.model')
->>>>>>> f24c124c6024bc84f065b2a9a950cfc0609c00f5
 		return {
 			DriverVehicles: {
 				relation: Model.HasManyRelation,
@@ -25,8 +22,6 @@ class DriverProfile extends Model {
 					to: tableNames.vehicle_table + '.vehicle_owner',
 				},
 			},
-<<<<<<< HEAD
-=======
 
 			Passengers: {
 				relation: Model.HasManyRelation,
@@ -36,7 +31,6 @@ class DriverProfile extends Model {
 					to: tableNames.Passengers + '.driver_id',
 				},
 			},
->>>>>>> f24c124c6024bc84f065b2a9a950cfc0609c00f5
 		}
 	}
 }

@@ -60,6 +60,6 @@ app.use(middlewares.notFound)
 app.use(middlewares.errorHandler)
 
 const serverPort = process.env.PORT || 6060
-app.listen(serverPort, '192.168.100.80', () => {
+app.listen(serverPort, () => {
 	console.log(`server is running on port http://localhost:${serverPort}`)
 })
