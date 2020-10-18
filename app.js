@@ -7,7 +7,7 @@ const cors = require('cors')
 const compression = require('compression')
 
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 app.use(helmet())
 app.use(morgan('tiny'))
@@ -60,6 +60,6 @@ app.use(middlewares.notFound)
 app.use(middlewares.errorHandler)
 
 const serverPort = process.env.PORT || 6060
-app.listen(serverPort, () => {
+app.listen(serverPort, '192.168.100.80', () => {
 	console.log(`server is running on port http://localhost:${serverPort}`)
 })
