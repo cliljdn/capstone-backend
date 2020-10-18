@@ -28,7 +28,7 @@ class DriverProfile extends Model {
 				modelClass: Passengers,
 				join: {
 					from: tableNames.driver_profile + '.driver_id',
-					to: tableNames.Passengers + '.driver_id',
+					to: tableNames.passengers + '.driver_id',
 				},
 			},
 		}
