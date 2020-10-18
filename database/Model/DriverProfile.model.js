@@ -23,7 +23,7 @@ class DriverProfile extends Model {
 				},
 			},
 
-			Passengers: {
+			DriverIdentitifier: {
 				relation: Model.HasManyRelation,
 				modelClass: Passengers,
 				join: {

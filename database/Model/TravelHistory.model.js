@@ -12,6 +12,7 @@ class TravelHistory extends Model {
 
 	static get relationMappings() {
 		const Companions = require('./Companion_Table.model')
+		const Passengers = require('./Passengers.model')
 		return {
 			Companions: {
 				relation: Model.HasManyRelation,
@@ -19,6 +20,16 @@ class TravelHistory extends Model {
 				join: {
 					from: tableNames.travel_history + '.travel_id',
 					to: tableNames.companion_table + '.travel_id',
+				},
+
+				GetTravelId: {
+					relation: Model.HasManyRelation,
+					modelClass: Passengers,
+
+					join: {
+						from: tableNames.travel_history + '.travel_id',
+						to: tableNames.passengers + '.travel_id',
+					},
 				},
 			},
 		}
