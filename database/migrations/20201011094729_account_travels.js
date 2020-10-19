@@ -94,6 +94,14 @@ exports.up = async function (knex) {
 			.references('account_id')
 			.inTable(tableNames.accounts_table)
 			.onDelete('cascade')
+
+		table
+			.integer('pass_id')
+			.unsigned()
+			.index()
+			.references('travel_id')
+			.inTable(tableNames.travel_history)
+			.onDelete('cascade')
 	})
 }
 

@@ -16,6 +16,7 @@ class Accounts extends Model {
 		const UserProfile = require('./UserProfile.model')
 		const TravelHistory = require('./TravelHistory.model')
 		const Companions = require('./Companion_Table.model')
+		const EmployeeScanned = require('./EmployeeScanned.model')
 		return {
 			UserProfile: {
 				relation: Model.HasOneRelation,
