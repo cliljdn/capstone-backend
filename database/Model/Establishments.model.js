@@ -11,14 +11,14 @@ class Establishments extends Model {
 	}
 
 	static get relationMappings() {
-		const Employees = require('./account_table.model')
+		const Employees = require('./EmployeeProfile.model')
 		return {
 			Employees: {
 				relation: Model.HasManyRelation,
 				modelClass: Employees,
 				join: {
 					from: tableConstants.establishments + '.establishment_id',
-					to: tableConstants.accounts_table + '.working_in',
+					to: tableConstants.employee_profile + '.working_in',
 				},
 			},
 		}

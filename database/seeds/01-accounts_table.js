@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt')
-const pass = bcrypt.hashSync('hahahaha', 10)
+const pass = bcrypt.hashSync('Jaudian29', 10)
 const tableNames = require('../../lib/contants/TableNames')
 exports.seed = function (knex) {
 	// Deletes ALL existing entries
@@ -40,6 +40,12 @@ exports.seed = function (knex) {
 				},
 				{
 					email: 'imokay@gmail.com',
+					password: pass,
+					account_type: 'Employee',
+					isActive: 1,
+				},
+				{
+					email: 'caliljaudiannn@gmail.com',
 					password: pass,
 					account_type: 'Employee',
 					isActive: 1,
