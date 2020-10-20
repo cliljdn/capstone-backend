@@ -22,7 +22,15 @@ exports.seed = function (knex) {
 					age: '21',
 					contactnumber: '090783821313',
 					profile_owner: 4,
-					profile_owner: 6,
+					working_in: 2,
+				},
+				{
+					firstname: 'Crisostomo',
+					lastname: 'Ibarra',
+					middlename: 'Edolmo',
+					age: '21',
+					contactnumber: '090783821313',
+					profile_owner: 7,
 					working_in: 2,
 				},
 			])

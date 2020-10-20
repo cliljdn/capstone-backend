@@ -73,6 +73,14 @@ exports.up = async function (knex) {
 			.inTable(tableNames.accounts_table)
 			.onDelete('cascade')
 
+		table
+			.integer('vehicle_used')
+			.unsigned()
+			.index()
+			.references('vehicle_id')
+			.inTable(tableNames.vehicle_table)
+			.onDelete('cascade')
+
 		table.timestamps(true, true)
 	})
 

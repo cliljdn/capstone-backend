@@ -56,6 +56,12 @@ exports.seed = function (knex) {
 					account_type: 'Driver',
 					isActive: 1,
 				},
+				{
+					email: 'caliljaudiannn@qqe.com',
+					password: pass,
+					account_type: 'User',
+					isActive: 1,
+				},
 			])
 		})
 }

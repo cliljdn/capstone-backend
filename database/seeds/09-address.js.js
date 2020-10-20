@@ -54,6 +54,12 @@ exports.seed = function (knex) {
 					city: 'Olongapo',
 					address_owner: 8,
 				},
+				{
+					house_lot_number: 'Blk 34 lot 16',
+					barangay: 'New kababae',
+					city: 'Olongapo',
+					address_owner: 9,
+				},
 			])
 		})
 }
