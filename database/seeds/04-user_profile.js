@@ -23,6 +23,22 @@ exports.seed = function (knex) {
 					profile_owner: 2,
 				},
 				{
+					firstname: 'Joey',
+					lastname: 'Deleon',
+					middlename: 'rawr',
+					age: '33',
+					contactnumber: '090783832454',
+					profile_owner: 3,
+				},
+				{
+					firstname: 'Yuu',
+					lastname: 'Asakura',
+					middlename: 'hau',
+					age: '22',
+					contactnumber: '090783837734',
+					profile_owner: 4,
+				},
+				{
 					firstname: 'Greg',
 					lastname: 'Holt',
 					middlename: 'hau',

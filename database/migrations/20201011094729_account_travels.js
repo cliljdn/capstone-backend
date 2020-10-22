@@ -54,8 +54,8 @@ exports.up = async function (knex) {
 			.integer('driver_id')
 			.unsigned()
 			.index()
-			.references('driver_id')
-			.inTable(tableNames.driver_profile)
+			.references('user_id')
+			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 		table
 			.integer('travel_id')

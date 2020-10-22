@@ -39,23 +39,6 @@ exports.up = async function (knex) {
 			.index()
 	})
 
-	await knex.schema.createTable(tableNames.driver_profile, function (table) {
-		table.increments('driver_id').notNullable()
-		table.string('firstname')
-		table.string('lastname')
-		table.string('middlename')
-		table.string('age')
-		table.string('contactnumber')
-		table.specificType('image', 'longblob')
-		table
-			.integer('profile_owner')
-			.unsigned()
-			.references('account_id')
-			.inTable(tableNames.accounts_table)
-			.onDelete('CASCADE')
-			.index()
-	})
-
 	await knex.schema.createTable(tableNames.establishments, function (table) {
 		table.increments('establishment_id').notNullable()
 		table.string('name')
@@ -102,8 +85,8 @@ exports.up = async function (knex) {
 		table
 			.integer('vehicle_owner')
 			.unsigned()
-			.references('driver_id')
-			.inTable(tableNames.driver_profile)
+			.references('user_id')
+			.inTable(tableNames.user_profile)
 			.onDelete('CASCADE')
 			.index()
 	})
@@ -133,7 +116,6 @@ exports.down = async function (knex) {
 	await knex.schema.dropTableIfExists(tableNames.vehicle_table)
 	await knex.schema.dropTableIfExists(tableNames.employee_profile)
 	await knex.schema.dropTableIfExists(tableNames.establishments)
-	await knex.schema.dropTableIfExists(tableNames.driver_profile)
 	await knex.schema.dropTableIfExists(tableNames.user_profile)
 	await knex.schema.dropTableIfExists(tableNames.admin_profile)
 }
