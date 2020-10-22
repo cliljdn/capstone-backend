@@ -39,6 +39,14 @@ exports.seed = function (knex) {
 					profile_owner: 4,
 				},
 				{
+					firstname: 'Ester',
+					lastname: 'Mamamril',
+					middlename: 'heeeeo',
+					age: '22',
+					contactnumber: '090783837734',
+					profile_owner: 8,
+				},
+				{
 					firstname: 'Greg',
 					lastname: 'Holt',
 					middlename: 'hau',
