@@ -66,11 +66,11 @@ exports.up = async function (knex) {
 			.onDelete('cascade')
 
 		table
-			.integer('account_id')
+			.integer('users_id')
 			.unsigned()
 			.index()
-			.references('account_id')
-			.inTable(tableNames.accounts_table)
+			.references('user_id')
+			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 
 		table
@@ -81,7 +81,7 @@ exports.up = async function (knex) {
 			.inTable(tableNames.vehicle_table)
 			.onDelete('cascade')
 
-		table.timestamps(true, true)
+		table.time('some_time', { precision: 6 }).defaultTo(knex.fn.now())
 	})
 
 	await knex.schema.createTable(tableNames.employee_scanned, function (table) {
