@@ -1,6 +1,5 @@
 require('dotenv').config()
 // Update with your config settings.
-
 module.exports = {
 	development: {
 		client: 'mysql2',
@@ -9,6 +8,7 @@ module.exports = {
 			database: 'capstonedb',
 			user: 'root',
 			password: '',
+			dateStrings: true,
 		},
 		pool: {
 			min: 2,

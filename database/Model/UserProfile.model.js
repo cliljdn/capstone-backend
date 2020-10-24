@@ -1,6 +1,6 @@
 const { Model } = require('objection')
 const tableNames = require('../../lib/contants/TableNames')
-const Passengers = require('./Passengers.model')
+
 const { HasManyRelation } = require('./Vehicle.model')
 
 class UserProfile extends Model {
@@ -17,6 +17,9 @@ class UserProfile extends Model {
 	}
 
 	static get relationMappings() {
+		const TravelHistory = require('./TravelHistory.model')
+		const Companions = require('./Companion_Table.model')
+		const Passengers = require('./Passengers.model')
 		const Vehicles = require('./Vehicle.model')
 		const Passenger = require('./Passengers.model')
 		return {
@@ -43,6 +46,24 @@ class UserProfile extends Model {
 				join: {
 					from: tableNames.user_profile + '.user_id',
 					to: tableNames.passengers + '.users_id',
+				},
+			},
+
+			Companions: {
+				relation: Model.HasManyRelation,
+				modelClass: Companions,
+				join: {
+					from: tableNames.user_profile + '.user_id',
+					to: tableNames.companion_table + '.parent_id',
+				},
+			},
+
+			TravelHistory: {
+				relation: Model.HasManyRelation,
+				modelClass: TravelHistory,
+				join: {
+					from: tableNames.user_profile + '.user_id',
+					to: tableNames.travel_history + '.user_id',
 				},
 			},
 		}

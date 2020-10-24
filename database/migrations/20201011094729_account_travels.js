@@ -11,11 +11,11 @@ exports.up = async function (knex) {
 		table.increments('travel_id').notNullable()
 		table.string('destination')
 		table
-			.integer('account_id')
+			.integer('user_id')
 			.unsigned()
 			.index()
-			.references('account_id')
-			.inTable(tableNames.accounts_table)
+			.references('user_id')
+			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 		table.boolean('isCompanion')
 
@@ -25,11 +25,11 @@ exports.up = async function (knex) {
 	await knex.schema.createTable(tableNames.companion_table, function (table) {
 		table.increments('Companion_id').notNullable()
 		table
-			.integer('account_id')
+			.integer('user_id')
 			.unsigned()
 			.index()
-			.references('account_id')
-			.inTable(tableNames.accounts_table)
+			.references('user_id')
+			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 		table
 			.integer('travel_id')
@@ -42,10 +42,11 @@ exports.up = async function (knex) {
 			.integer('parent_id')
 			.unsigned()
 			.index()
-			.references('account_id')
-			.inTable(tableNames.accounts_table)
+			.references('user_id')
+			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
-		table.timestamp('created_at').defaultTo(knex.fn.now())
+		table.time('time_created', { precision: 4 }).defaultTo(knex.fn.now())
+		table.date('date_created', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 
 	await knex.schema.createTable(tableNames.passengers, function (table) {
@@ -81,7 +82,8 @@ exports.up = async function (knex) {
 			.inTable(tableNames.vehicle_table)
 			.onDelete('cascade')
 
-		table.time('some_time', { precision: 6 }).defaultTo(knex.fn.now())
+		table.time('time_boarded', { precision: 4 }).defaultTo(knex.fn.now())
+		table.date('date_boarded', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 
 	await knex.schema.createTable(tableNames.employee_scanned, function (table) {
@@ -110,6 +112,8 @@ exports.up = async function (knex) {
 			.references('travel_id')
 			.inTable(tableNames.travel_history)
 			.onDelete('cascade')
+		table.time('time_entered', { precision: 4 }).defaultTo(knex.fn.now())
+		table.date('date_entered', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 }
 
