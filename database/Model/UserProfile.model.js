@@ -17,6 +17,8 @@ class UserProfile extends Model {
 	}
 
 	static get relationMappings() {
+		const EmployeeScanned = require('./EmployeeScanned.model')
+		const Establishments = require('./Establishments.model')
 		const TravelHistory = require('./TravelHistory.model')
 		const Companions = require('./Companion_Table.model')
 		const Passengers = require('./Passengers.model')
@@ -40,6 +42,7 @@ class UserProfile extends Model {
 					to: tableNames.passengers + '.driver_id',
 				},
 			},
+
 			UserInfo: {
 				relation: Model.HasManyRelation,
 				modelClass: Passengers,
@@ -49,12 +52,21 @@ class UserProfile extends Model {
 				},
 			},
 
-			Companions: {
+			GetCompanions: {
 				relation: Model.HasManyRelation,
 				modelClass: Companions,
 				join: {
 					from: tableNames.user_profile + '.user_id',
 					to: tableNames.companion_table + '.parent_id',
+				},
+			},
+
+			CompanionInfo: {
+				relation: Model.HasManyRelation,
+				modelClass: Companions,
+				join: {
+					from: tableNames.user_profile + '.user_id',
+					to: tableNames.companion_table + '.users_id',
 				},
 			},
 
@@ -64,6 +76,21 @@ class UserProfile extends Model {
 				join: {
 					from: tableNames.user_profile + '.user_id',
 					to: tableNames.travel_history + '.user_id',
+				},
+			},
+
+			EnteredEst: {
+				relation: Model.ManyToManyRelation,
+				modelClass: Establishments,
+				join: {
+					from: tableNames.user_profile + '.user_id',
+					through: {
+						// persons_movies is the join table.
+						from: tableNames.employee_scanned + '.users_id',
+						to: tableNames.employee_scanned + '.est_id',
+					},
+
+					to: tableNames.establishments + '.establishment_id',
 				},
 			},
 		}

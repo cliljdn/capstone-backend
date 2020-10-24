@@ -25,7 +25,7 @@ exports.up = async function (knex) {
 	await knex.schema.createTable(tableNames.companion_table, function (table) {
 		table.increments('Companion_id').notNullable()
 		table
-			.integer('user_id')
+			.integer('users_id')
 			.unsigned()
 			.index()
 			.references('user_id')
@@ -45,7 +45,8 @@ exports.up = async function (knex) {
 			.references('user_id')
 			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
-		table.time('time_created', { precision: 4 }).defaultTo(knex.fn.now())
+
+		table.time('time_created', { precision: 6 }).defaultTo(knex.fn.now())
 		table.date('date_created', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 
@@ -82,7 +83,7 @@ exports.up = async function (knex) {
 			.inTable(tableNames.vehicle_table)
 			.onDelete('cascade')
 
-		table.time('time_boarded', { precision: 4 }).defaultTo(knex.fn.now())
+		table.time('time_boarded', { precision: 6 }).defaultTo(knex.fn.now())
 		table.date('date_boarded', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 
@@ -96,13 +97,20 @@ exports.up = async function (knex) {
 			.references('employee_id')
 			.inTable(tableNames.employee_profile)
 			.onDelete('cascade')
-
 		table
-			.integer('account_id')
+			.integer('est_id')
 			.unsigned()
 			.index()
-			.references('account_id')
-			.inTable(tableNames.accounts_table)
+			.references('establishment_id')
+			.inTable(tableNames.establishments)
+			.onDelete('cascade')
+
+		table
+			.integer('users_id')
+			.unsigned()
+			.index()
+			.references('user_id')
+			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 
 		table
@@ -112,7 +120,8 @@ exports.up = async function (knex) {
 			.references('travel_id')
 			.inTable(tableNames.travel_history)
 			.onDelete('cascade')
-		table.time('time_entered', { precision: 4 }).defaultTo(knex.fn.now())
+
+		table.time('time_entered', { precision: 6 }).defaultTo(knex.fn.now())
 		table.date('date_entered', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 }

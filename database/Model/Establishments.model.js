@@ -11,6 +11,7 @@ class Establishments extends Model {
 	}
 
 	static get relationMappings() {
+		const Scanned = require('./EmployeeScanned.model')
 		const Employees = require('./EmployeeProfile.model')
 		return {
 			Employees: {
@@ -19,6 +20,15 @@ class Establishments extends Model {
 				join: {
 					from: tableConstants.establishments + '.establishment_id',
 					to: tableConstants.employee_profile + '.working_in',
+				},
+			},
+
+			EstInfo: {
+				relation: Model.HasManyRelation,
+				modelClass: Scanned,
+				join: {
+					from: tableConstants.establishments + '.establishment_id',
+					to: tableConstants.employee_scanned + '.est_id',
 				},
 			},
 		}
