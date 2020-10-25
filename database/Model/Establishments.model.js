@@ -1,5 +1,6 @@
 const { Model } = require('objection')
 const tableConstants = require('../../lib/contants/TableNames')
+const EmployeeScanned = require('./EmployeeScanned.model')
 
 class Establishments extends Model {
 	static get tableName() {

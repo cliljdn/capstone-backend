@@ -1,4 +1,9 @@
 const { Model } = require('objection')
+const {
+	employee_scanned,
+	user_profile,
+	establishments,
+} = require('../../lib/contants/TableNames')
 const tableNames = require('../../lib/contants/TableNames')
 
 const { HasManyRelation } = require('./Vehicle.model')
@@ -69,7 +74,6 @@ class UserProfile extends Model {
 					to: tableNames.companion_table + '.users_id',
 				},
 			},
-
 			TravelHistory: {
 				relation: Model.HasManyRelation,
 				modelClass: TravelHistory,
@@ -79,21 +83,28 @@ class UserProfile extends Model {
 				},
 			},
 
-			EnteredEst: {
+			EstEntered: {
 				relation: Model.ManyToManyRelation,
 				modelClass: Establishments,
 				join: {
-					from: tableNames.user_profile + '.user_id',
+					from: tableNames.establishments + '.establishment_id',
 					through: {
-						// persons_movies is the join table.
-						from: tableNames.employee_scanned + '.users_id',
-						to: tableNames.employee_scanned + '.est_id',
+						from: tableNames.employee_scanned + '.est_id',
+						to: tableNames.employee_scanned + '.users_id',
 					},
-
-					to: tableNames.establishments + '.establishment_id',
+					to: tableNames.user_profile + '.user_id',
+				},
+			},
+			UserCompanions: {
+				relation: Model.HasManyRelation,
+				modelClass: EmployeeScanned,
+				join: {
+					to: tableNames.user_profile + '.user_id',
+					from: tableNames.employee_scanned + '.users_id',
 				},
 			},
 		}
 	}
 }
+
 module.exports = UserProfile
