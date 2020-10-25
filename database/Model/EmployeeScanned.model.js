@@ -1,7 +1,5 @@
 const { Model } = require('objection')
 const tableNames = require('../../lib/contants/TableNames')
-const TravelHistory = require('./TravelHistory.model')
-const UserProfile = require('./UserProfile.model')
 
 class EmployeeScanned extends Model {
 	static get tableName() {
@@ -13,6 +11,9 @@ class EmployeeScanned extends Model {
 	}
 
 	static get relationMappings() {
+		const TravelHistory = require('./TravelHistory.model')
+		const UserProfile = require('./UserProfile.model')
+		const Establishments = require('./Establishments.model')
 		return {
 			ListOfCompanion: {
 				relation: Model.ManyToManyRelation,
@@ -24,6 +25,27 @@ class EmployeeScanned extends Model {
 						to: tableNames.employee_scanned + '.pass_id',
 					},
 					to: tableNames.travel_history + '.travel_id',
+				},
+			},
+			CompanionsOfUser: {
+				relation: Model.ManyToManyRelation,
+				modelClass: UserProfile,
+				join: {
+					from: tableNames.employee_scanned + '.users_id',
+					through: {
+						from: tableNames.companion_table + '.parent_id',
+						to: tableNames.companion_table + '.users_id',
+					},
+					to: tableNames.user_profile + '.user_id',
+				},
+			},
+
+			NamesOfCompanions: {
+				relation: Model.HasManyRelation,
+				modelClass: UserProfile,
+				join: {
+					from: tableNames.employee_scanned + '.users_id',
+					to: tableNames.user_profile + '.user_id',
 				},
 			},
 		}

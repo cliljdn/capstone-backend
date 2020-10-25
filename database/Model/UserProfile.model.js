@@ -83,24 +83,30 @@ class UserProfile extends Model {
 				},
 			},
 
-			EstEntered: {
+			EnteredInfo: {
 				relation: Model.ManyToManyRelation,
-				modelClass: Establishments,
+				modelClass: EmployeeScanned,
 				join: {
-					from: tableNames.establishments + '.establishment_id',
+					from: tableNames.employee_scanned + '.users_id',
 					through: {
-						from: tableNames.employee_scanned + '.est_id',
-						to: tableNames.employee_scanned + '.users_id',
+						from: tableNames.companion_table + '.parent_id',
+						to: tableNames.companion_table + '.users_id',
 					},
 					to: tableNames.user_profile + '.user_id',
 				},
 			},
-			UserCompanions: {
-				relation: Model.HasManyRelation,
-				modelClass: EmployeeScanned,
+
+			EstEntered: {
+				relation: Model.ManyToManyRelation,
+				modelClass: Establishments,
 				join: {
-					to: tableNames.user_profile + '.user_id',
-					from: tableNames.employee_scanned + '.users_id',
+					from: tableNames.user_profile + '.user_id',
+					through: {
+						from: tableNames.employee_scanned + '.users_id',
+						to: tableNames.employee_scanned + '.est_id',
+						extra: ['pass_id'],
+					},
+					to: tableNames.establishments + '.establishment_id',
 				},
 			},
 		}
