@@ -1,5 +1,8 @@
 const { Model } = require('objection')
+const { est_companions } = require('../../lib/contants/TableNames')
 const tableConstants = require('../../lib/contants/TableNames')
+const EstCompanions = require('./Est_Companions.model')
+const UserProfile = require('./UserProfile.model')
 
 class Establishments extends Model {
 	static get tableName() {
@@ -21,6 +24,38 @@ class Establishments extends Model {
 				join: {
 					from: tableConstants.establishments + '.establishment_id',
 					to: tableConstants.employee_profile + '.working_in',
+				},
+			},
+
+			Names: {
+				relation: Model.ManyToManyRelation,
+				modelClass: UserProfile,
+				join: {
+					from: tableConstants.user_profile + '.user_id',
+					through: {
+						from: tableConstants.employee_scanned + '.est_id',
+						to: tableConstants.employee_scanned + '.users_id',
+					},
+					to: tableConstants.establishments + '.establishment_id',
+				},
+			},
+
+			GraphCompanions: {
+				relation: Model.HasManyRelation,
+				modelClass: EstCompanions,
+				join: {
+					from: tableConstants.establishments + '.establishment_id',
+					to: tableConstants.est_companions + '.est_id',
+				},
+			},
+
+			Entered: {
+				relation: Model.HasManyRelation,
+				modelClass: EmployeeScanned,
+				join: {
+					from: tableConstants.establishments + '.establishment_id',
+
+					to: tableConstants.employee_scanned + '.est_id',
 				},
 			},
 		}

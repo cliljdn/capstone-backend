@@ -1,5 +1,7 @@
 const { Model } = require('objection')
+const { companion_table } = require('../../lib/contants/TableNames')
 const tableNames = require('../../lib/contants/TableNames')
+const UserProfile = require('./UserProfile.model')
 
 class TravelHistory extends Model {
 	static get tableName() {

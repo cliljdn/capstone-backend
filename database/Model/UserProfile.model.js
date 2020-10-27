@@ -1,12 +1,7 @@
 const { Model } = require('objection')
-const {
-	employee_scanned,
-	user_profile,
-	establishments,
-} = require('../../lib/contants/TableNames')
 const tableNames = require('../../lib/contants/TableNames')
 
-const { HasManyRelation } = require('./Vehicle.model')
+const { HasManyRelation, query } = require('./Vehicle.model')
 
 class UserProfile extends Model {
 	static get tableName() {
@@ -29,6 +24,7 @@ class UserProfile extends Model {
 		const Passengers = require('./Passengers.model')
 		const Vehicles = require('./Vehicle.model')
 		const Passenger = require('./Passengers.model')
+		const EstCompanions = require('./Est_Companions.model')
 		return {
 			DriverVehicles: {
 				relation: Model.HasManyRelation,
@@ -83,30 +79,12 @@ class UserProfile extends Model {
 				},
 			},
 
-			EnteredInfo: {
-				relation: Model.ManyToManyRelation,
-				modelClass: EmployeeScanned,
-				join: {
-					from: tableNames.employee_scanned + '.users_id',
-					through: {
-						from: tableNames.companion_table + '.parent_id',
-						to: tableNames.companion_table + '.users_id',
-					},
-					to: tableNames.user_profile + '.user_id',
-				},
-			},
-
-			EstEntered: {
-				relation: Model.ManyToManyRelation,
-				modelClass: Establishments,
+			GetEstCompanions: {
+				relation: Model.HasManyRelation,
+				modelClass: EstCompanions,
 				join: {
 					from: tableNames.user_profile + '.user_id',
-					through: {
-						from: tableNames.employee_scanned + '.users_id',
-						to: tableNames.employee_scanned + '.est_id',
-						extra: ['pass_id'],
-					},
-					to: tableNames.establishments + '.establishment_id',
+					to: tableNames.est_companions + '.parent_id',
 				},
 			},
 		}

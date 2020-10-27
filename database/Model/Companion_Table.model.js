@@ -10,9 +10,19 @@ class Companions extends Model {
 	}
 
 	static get relationMappings() {
+		const EmployeeScanned = require('./EmployeeScanned.model')
 		const UserProfile = require('./UserProfile.model')
 		return {
-			LoadProfile: {
+			try: {
+				relation: Model.HasManyRelation,
+				modelClass: EmployeeScanned,
+				join: {
+					from: tableNames.companion_table + '.travel_id',
+					to: tableNames.employee_scanned + '.pass_id',
+				},
+			},
+
+			showUsers: {
 				relation: Model.HasManyRelation,
 				modelClass: UserProfile,
 				join: {

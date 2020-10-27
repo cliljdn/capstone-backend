@@ -113,16 +113,39 @@ exports.up = async function (knex) {
 			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 
-		table
-			.integer('pass_id')
-			.unsigned()
-			.index()
-			.references('travel_id')
-			.inTable(tableNames.travel_history)
-			.onDelete('cascade')
-
 		table.time('time_entered', { precision: 6 }).defaultTo(knex.fn.now())
 		table.date('date_entered', { precision: 6 }).defaultTo(knex.fn.now(6))
+	})
+
+	await knex.schema.createTable(tableNames.est_companions, function (table) {
+		table.increments('est_comp_id').notNullable()
+
+		table
+			.integer('est_id')
+			.unsigned()
+			.index()
+			.references('establishment_id')
+			.inTable(tableNames.establishments)
+			.onDelete('cascade')
+
+		table
+			.integer('users_id')
+			.unsigned()
+			.index()
+			.references('user_id')
+			.inTable(tableNames.user_profile)
+			.onDelete('cascade')
+
+		table
+			.integer('parent_id')
+			.unsigned()
+			.index()
+			.references('user_id')
+			.inTable(tableNames.user_profile)
+			.onDelete('cascade')
+
+		table.time('time_created', { precision: 6 }).defaultTo(knex.fn.now())
+		table.date('date_created', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 }
 
@@ -132,6 +155,7 @@ exports.up = async function (knex) {
  */
 
 exports.down = async function (knex) {
+	await knex.schema.dropTableIfExists(tableNames.est_companions)
 	await knex.schema.dropTableIfExists(tableNames.employee_scanned)
 	await knex.schema.dropTableIfExists(tableNames.passengers)
 	await knex.schema.dropTableIfExists(tableNames.companion_table)
