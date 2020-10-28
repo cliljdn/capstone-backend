@@ -27,19 +27,6 @@ class Establishments extends Model {
 				},
 			},
 
-			Names: {
-				relation: Model.ManyToManyRelation,
-				modelClass: UserProfile,
-				join: {
-					from: tableConstants.user_profile + '.user_id',
-					through: {
-						from: tableConstants.employee_scanned + '.est_id',
-						to: tableConstants.employee_scanned + '.users_id',
-					},
-					to: tableConstants.establishments + '.establishment_id',
-				},
-			},
-
 			GraphCompanions: {
 				relation: Model.HasManyRelation,
 				modelClass: EstCompanions,

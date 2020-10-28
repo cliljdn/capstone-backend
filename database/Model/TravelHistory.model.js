@@ -1,7 +1,6 @@
 const { Model } = require('objection')
 const { companion_table } = require('../../lib/contants/TableNames')
 const tableNames = require('../../lib/contants/TableNames')
-const UserProfile = require('./UserProfile.model')
 
 class TravelHistory extends Model {
 	static get tableName() {
@@ -13,6 +12,7 @@ class TravelHistory extends Model {
 	}
 
 	static get relationMappings() {
+		const UserProfile = require('./UserProfile.model')
 		const Companions = require('./Companion_Table.model')
 		const Passengers = require('./Passengers.model')
 		const EmployeeScanned = require('./EmployeeScanned.model')
@@ -36,12 +36,20 @@ class TravelHistory extends Model {
 				},
 			},
 
-			EstablishmentEntered: {
-				relation: Model.HasManyRelation,
-				modelClass: EmployeeScanned,
+			UsersCompanion: {
+				relation: Model.ManyToManyRelation,
+				modelClass: UserProfile,
 				join: {
 					from: tableNames.travel_history + '.travel_id',
-					to: tableNames.employee_scanned + '.pass_id',
+					through: {
+						from: tableNames.companion_table + '.travel_id',
+						to: tableNames.companion_table + '.users_id',
+						extra: {
+							time_boarded: 'time_created',
+							date_boarded: 'date_created',
+						},
+					},
+					to: tableNames.user_profile + '.user_id',
 				},
 			},
 		}

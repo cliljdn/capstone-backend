@@ -19,7 +19,8 @@ exports.up = async function (knex) {
 			.onDelete('cascade')
 		table.boolean('isCompanion')
 
-		table.timestamps(true, true)
+		table.time('time_created', { precision: 6 }).defaultTo(knex.fn.now())
+		table.date('date_created', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 
 	await knex.schema.createTable(tableNames.companion_table, function (table) {
