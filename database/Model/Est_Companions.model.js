@@ -15,19 +15,6 @@ class EstCompanions extends Model {
 		const Establishments = require('./Establishments.model')
 		const UserProfile = require('./UserProfile.model')
 		return {
-			EstLog: {
-				relation: Model.ManyToManyRelation,
-				modelClass: UserProfile,
-				join: {
-					from: tableConstants.est_companions + '.users_id',
-					through: {
-						from: tableConstants.employee_scanned + '.users_id',
-						to: tableConstants.employee_scanned + '.users_id',
-					},
-					to: tableConstants.user_profile + '.user_id',
-				},
-			},
-
 			EstEnterd: {
 				relation: Model.BelongsToOneRelation,
 				modelClass: Establishments,
