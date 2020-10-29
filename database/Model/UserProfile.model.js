@@ -70,6 +70,7 @@ class UserProfile extends Model {
 					to: tableNames.companion_table + '.users_id',
 				},
 			},
+
 			TravelHistory: {
 				relation: Model.HasManyRelation,
 				modelClass: TravelHistory,
@@ -79,14 +80,14 @@ class UserProfile extends Model {
 				},
 			},
 
-			GetEstCompanions: {
-				relation: Model.HasManyRelation,
-				modelClass: EstCompanions,
-				join: {
-					from: tableNames.user_profile + '.user_id',
-					to: tableNames.est_companions + '.parent_id',
-				},
-			},
+			// GoingTo: {
+			// 	relation: Model.BelongsToOneRelation,
+			// 	modelClass: Vehicles,
+			// 	join: {
+			// 		from: tableNames.user_profile + '.user_id',
+			// 		to: tableNames.vehicle_table + '.vehicle_owner',
+			// 	},
+			// },
 		}
 	}
 }

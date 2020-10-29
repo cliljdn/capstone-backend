@@ -39,6 +39,7 @@ const establishmentEndpoint = require('./lib/Endpoints/establishments/establishm
 const DriverProfileEndpoints = require('./lib/Endpoints/Drivers/Driver.api')
 const AddressEndpoints = require('./lib/Endpoints/Address/Address.api')
 const listAccountEndpoints = require('./lib/Endpoints/accounts/ListAccounts.api')
+const adminEndpoints = require('./lib/Endpoints/Admin/Admin.api')
 
 // mounts endpoints
 app.use('/api/v1', accountEnpoints)
@@ -46,6 +47,7 @@ app.use('/api/v1', establishmentEndpoint)
 app.use('/api/v1', DriverProfileEndpoints)
 app.use('/api/v1', AddressEndpoints)
 app.use('/api/v1', listAccountEndpoints)
+app.use('/api/v1', adminEndpoints)
 
 // constants for Model
 const knexConfig = require('./knexfile')

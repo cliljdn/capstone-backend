@@ -37,6 +37,7 @@ exports.up = async function (knex) {
 			.inTable(tableNames.accounts_table)
 			.onDelete('CASCADE')
 			.index()
+		table.boolean('isDriver').defaultTo(false)
 	})
 
 	await knex.schema.createTable(tableNames.establishments, function (table) {
