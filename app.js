@@ -34,11 +34,11 @@ app.get('/', (req, res) => {
 })
 
 // constants for endpoints
-const accountEnpoints = require('./lib/Endpoints/accounts/accounts.api')
+const accountEnpoints = require('./lib/Endpoints/Mobile/accounts.api')
 const establishmentEndpoint = require('./lib/Endpoints/establishments/establishment.api')
 const DriverProfileEndpoints = require('./lib/Endpoints/Drivers/Driver.api')
 const AddressEndpoints = require('./lib/Endpoints/Address/Address.api')
-const listAccountEndpoints = require('./lib/Endpoints/accounts/ListAccounts.api')
+const listAccountEndpoints = require('./lib/Endpoints/Mobile/ListAccounts.api')
 const adminEndpoints = require('./lib/Endpoints/Admin/Admin.api')
 
 // mounts endpoints

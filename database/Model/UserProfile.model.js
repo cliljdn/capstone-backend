@@ -25,7 +25,7 @@ class UserProfile extends Model {
 		const Vehicles = require('./Vehicle.model')
 		const Passenger = require('./Passengers.model')
 		const EstCompanions = require('./Est_Companions.model')
-		const AddressModel = require('./Address.model')
+
 		return {
 			DriverVehicles: {
 				relation: Model.HasManyRelation,
@@ -42,14 +42,6 @@ class UserProfile extends Model {
 				join: {
 					from: tableNames.user_profile + '.user_id',
 					to: tableNames.passengers + '.driver_id',
-				},
-			},
-			AccountAddress: {
-				relation: Model.HasOneRelation,
-				modelClass: AddressModel,
-				join: {
-					from: tableNames.user_profile + '.user_id',
-					to: tableNames.address_table + '.address_owner',
 				},
 			},
 			UserInfo: {

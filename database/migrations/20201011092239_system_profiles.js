@@ -98,7 +98,7 @@ exports.up = async function (knex) {
 		table.string('barangay')
 		table.string('city')
 		table
-			.integer('account_id')
+			.integer('address_owner')
 			.unsigned()
 			.references('account_id')
 			.inTable(tableNames.accounts_table)

@@ -10,11 +10,15 @@ class AdminProfile extends Model {
 	}
 
 	static get relationMappings() {
+		const AdminAddress = require('./AdminAddress.model')
 		return {
 			Address: {
 				relation: Model.HasOneRelation,
 				modelClass: AdminAddress,
-				join: {},
+				join: {
+					from: tableConstants.admin_profile + '.admin_id',
+					to: tableConstants.admin_address + '.address_owner',
+				},
 			},
 		}
 	}
