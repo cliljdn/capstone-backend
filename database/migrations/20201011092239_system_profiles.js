@@ -98,10 +98,24 @@ exports.up = async function (knex) {
 		table.string('barangay')
 		table.string('city')
 		table
-			.integer('address_owner')
+			.integer('account_id')
 			.unsigned()
 			.references('account_id')
 			.inTable(tableNames.accounts_table)
+			.onDelete('CASCADE')
+			.index()
+	})
+
+	await knex.schema.createTable(tableNames.admin_address, function (table) {
+		table.increments('address_id').notNullable()
+		table.string('house_lot_number')
+		table.string('barangay')
+		table.string('city')
+		table
+			.integer('address_owner')
+			.unsigned()
+			.references('admin_id')
+			.inTable(tableNames.admin_profile)
 			.onDelete('CASCADE')
 			.index()
 	})
@@ -113,6 +127,7 @@ exports.up = async function (knex) {
  */
 
 exports.down = async function (knex) {
+	await knex.schema.dropTableIfExists(tableNames.admin_address)
 	await knex.schema.dropTableIfExists(tableNames.address_table)
 	await knex.schema.dropTableIfExists(tableNames.vehicle_table)
 	await knex.schema.dropTableIfExists(tableNames.employee_profile)

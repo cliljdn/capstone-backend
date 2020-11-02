@@ -8,6 +8,16 @@ class AdminProfile extends Model {
 	static get idColumn() {
 		return 'admin_id'
 	}
+
+	static get relationMappings() {
+		return {
+			Address: {
+				relation: Model.HasOneRelation,
+				modelClass: AdminAddress,
+				join: {},
+			},
+		}
+	}
 }
 
 module.exports = AdminProfile
