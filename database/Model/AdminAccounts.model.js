@@ -14,7 +14,7 @@ class AdminAccounts extends Model {
 		const AdminProfile = require('./AdminProfile.model')
 		return {
 			Profile: {
-				relation: Model.BelongsToOneRelation,
+				relation: Model.HasOneRelation,
 				modelClass: AdminProfile,
 				join: {
 					from: tableConstants.admin_accounts + '.admin_id',

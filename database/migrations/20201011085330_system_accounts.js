@@ -11,7 +11,7 @@ exports.up = async (knex) => {
 		table.increments('account_id').notNullable()
 		table.string('email')
 		table.string('password'), table.string('account_type')
-		table.boolean('isActive')
+		table.boolean('isActive').defaultTo(false)
 		table.timestamps(true, true)
 	})
 
