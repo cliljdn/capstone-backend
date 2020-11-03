@@ -33,13 +33,16 @@ app.get('/', (req, res) => {
 	})
 })
 
-// constants for endpoints
+// constants for endpoints Mobile
 const accountEnpoints = require('./lib/Endpoints/Mobile/accounts.api')
 const establishmentEndpoint = require('./lib/Endpoints/establishments/establishment.api')
 const DriverProfileEndpoints = require('./lib/Endpoints/Drivers/Driver.api')
 const AddressEndpoints = require('./lib/Endpoints/Address/Address.api')
 const listAccountEndpoints = require('./lib/Endpoints/Mobile/ListAccounts.api')
+
+// constants for endpoints Admin
 const adminEndpoints = require('./lib/Endpoints/Admin/Admin.api')
+const ListDrivers = require('./lib/Endpoints/Admin/ListDrivers.api')
 
 // mounts endpoints
 app.use('/api/v1', accountEnpoints)
@@ -48,6 +51,7 @@ app.use('/api/v1', DriverProfileEndpoints)
 app.use('/api/v1', AddressEndpoints)
 app.use('/api/v1', listAccountEndpoints)
 app.use('/api/v1', adminEndpoints)
+app.use('/api/v1', ListDrivers)
 
 // constants for Model
 const knexConfig = require('./knexfile')
