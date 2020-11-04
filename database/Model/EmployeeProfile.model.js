@@ -20,6 +20,15 @@ class EmployeeProfile extends Model {
 					to: tableNames.employee_scanned + '.employee_id',
 				},
 			},
+
+			Address: {
+				relation: Model.HasOneRelation,
+				modelClass: EmployeeScanned,
+				join: {
+					from: tableNames.employee_profile + '.employee_id',
+					to: tableNames.employee_address + '.address_owner',
+				},
+			},
 		}
 	}
 }

@@ -45,8 +45,25 @@ class Establishments extends Model {
 						from: tableConstants.est_companions + '.est_id',
 						to: tableConstants.est_companions + '.users_id',
 						extra: {
-							date_entered: 'date_created',
-							time_entered: 'time_created',
+							date_created: 'date_created',
+							time_created: 'time_created',
+						},
+					},
+					to: tableConstants.user_profile + '.user_id',
+				},
+			},
+
+			PersonEntered: {
+				relation: Model.ManyToManyRelation,
+				modelClass: UserProfile,
+				join: {
+					from: tableConstants.establishments + '.establishment_id',
+					through: {
+						from: tableConstants.employee_scanned + '.est_id',
+						to: tableConstants.employee_scanned + '.users_id',
+						extra: {
+							time_entered: 'time_entered',
+							date_entered: 'date_entered',
 						},
 					},
 					to: tableConstants.user_profile + '.user_id',

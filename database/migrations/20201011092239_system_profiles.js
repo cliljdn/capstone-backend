@@ -119,6 +119,20 @@ exports.up = async function (knex) {
 			.onDelete('CASCADE')
 			.index()
 	})
+
+	await knex.schema.createTable(tableNames.employee_address, function (table) {
+		table.increments('address_id').notNullable()
+		table.string('house_lot_number')
+		table.string('barangay')
+		table.string('city')
+		table
+			.integer('address_owner')
+			.unsigned()
+			.references('employee_id')
+			.inTable(tableNames.employee_profile)
+			.onDelete('CASCADE')
+			.index()
+	})
 }
 
 /**
