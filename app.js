@@ -42,7 +42,7 @@ const listAccountEndpoints = require('./lib/Endpoints/Mobile/ListAccounts.api')
 
 // constants for endpoints Admin
 const adminEndpoints = require('./lib/Endpoints/Admin/Admin.api')
-const ListDrivers = require('./lib/Endpoints/Admin/ListDrivers.api')
+const ListDrivers = require('./lib/Endpoints/Admin/List.api')
 
 // mounts endpoints
 app.use('/api/v1', accountEnpoints)

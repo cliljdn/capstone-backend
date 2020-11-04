@@ -47,8 +47,8 @@ exports.up = async function (knex) {
 			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 
-		table.time('time_boarded', { precision: 6 }).defaultTo(knex.fn.now())
-		table.date('date_boarded', { precision: 6 }).defaultTo(knex.fn.now(6))
+		table.time('time_created', { precision: 6 }).defaultTo(knex.fn.now())
+		table.date('date_created', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 
 	await knex.schema.createTable(tableNames.passengers, function (table) {

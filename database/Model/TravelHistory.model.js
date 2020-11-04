@@ -61,7 +61,10 @@ class TravelHistory extends Model {
 					through: {
 						from: tableNames.passengers + '.travel_id',
 						to: tableNames.passengers + '.users_id',
-						extra: ['time_boarded', 'date_boarded'],
+						extra: {
+							time_boarded: 'time_boarded',
+							date_boarded: 'date_boarded',
+						},
 					},
 
 					to: tableNames.user_profile + '.user_id',
