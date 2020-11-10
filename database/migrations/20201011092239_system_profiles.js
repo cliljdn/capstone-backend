@@ -141,6 +141,7 @@ exports.up = async function (knex) {
  */
 
 exports.down = async function (knex) {
+	await knex.schema.dropTableIfExists(tableNames.employee_address)
 	await knex.schema.dropTableIfExists(tableNames.admin_address)
 	await knex.schema.dropTableIfExists(tableNames.address_table)
 	await knex.schema.dropTableIfExists(tableNames.vehicle_table)
