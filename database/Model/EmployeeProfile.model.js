@@ -1,6 +1,5 @@
 const { Model } = require('objection')
 const tableNames = require('../../lib/contants/TableNames')
-const EmployeeScanned = require('./EmployeeScanned.model')
 
 class EmployeeProfile extends Model {
 	static get tableName() {
@@ -11,6 +10,8 @@ class EmployeeProfile extends Model {
 	}
 
 	static get relationMappings() {
+		const EmployeeScanned = require('./EmployeeScanned.model')
+		const EmployeeAddress = require('./EmployeeAddress.model')
 		return {
 			GraphUsers: {
 				relation: Model.HasOneRelation,
@@ -23,7 +24,7 @@ class EmployeeProfile extends Model {
 
 			Address: {
 				relation: Model.HasOneRelation,
-				modelClass: EmployeeScanned,
+				modelClass: EmployeeAddress,
 				join: {
 					from: tableNames.employee_profile + '.employee_id',
 					to: tableNames.employee_address + '.address_owner',
