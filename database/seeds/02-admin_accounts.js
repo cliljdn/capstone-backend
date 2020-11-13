@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt')
-const hash = bcrypt.hashSync('kamusta', 10)
+const hash = bcrypt.hashSync('Kamusta29', 10)
 const tableNames = require('../../lib/contants/TableNames')
 exports.seed = function (knex) {
 	// Deletes ALL existing entries
