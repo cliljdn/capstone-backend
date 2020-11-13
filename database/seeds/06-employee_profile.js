@@ -24,15 +24,6 @@ exports.seed = function (knex) {
 					profile_owner: 4,
 					working_in: 2,
 				},
-				{
-					firstname: 'Crisostomo',
-					lastname: 'Ibarra',
-					middlename: 'Edolmo',
-					age: '21',
-					contactnumber: '090783821313',
-					profile_owner: 7,
-					working_in: 2,
-				},
 			])
 		})
 }

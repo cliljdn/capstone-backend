@@ -45,8 +45,8 @@ class TravelHistory extends Model {
 						from: tableNames.companion_table + '.travel_id',
 						to: tableNames.companion_table + '.users_id',
 						extra: {
-							time_boarded: 'time_boarded',
-							date_boarded: 'date_boarded',
+							time_boarded: 'time_created',
+							date_boarded: 'date_created',
 						},
 					},
 					to: tableNames.user_profile + '.user_id',

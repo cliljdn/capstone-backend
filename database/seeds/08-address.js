@@ -34,32 +34,26 @@ exports.seed = function (knex) {
 					house_lot_number: 'Blk 9 lot 16',
 					barangay: 'West bajac bajac',
 					city: 'Olongapo',
-					address_owner: 5,
+					address_owner: 7,
 				},
 				{
 					house_lot_number: 'Blk 2 lot 16',
 					barangay: 'East bajac bajac',
 					city: 'Olongapo',
-					address_owner: 6,
-				},
-				{
-					house_lot_number: 'Blk 15 lot 16',
-					barangay: 'Beacon',
-					city: 'Olongapo',
-					address_owner: 7,
-				},
-				{
-					house_lot_number: 'Blk 8 lot 16',
-					barangay: 'New kalalake',
-					city: 'Olongapo',
 					address_owner: 8,
 				},
-				{
-					house_lot_number: 'Blk 34 lot 16',
-					barangay: 'New kababae',
-					city: 'Olongapo',
-					address_owner: 9,
-				},
+				// {
+				// 	house_lot_number: 'Blk 15 lot 16',
+				// 	barangay: 'Beacon',
+				// 	city: 'Olongapo',
+				// 	address_owner: 7,
+				// },
+				// {
+				// 	house_lot_number: 'Blk 8 lot 16',
+				// 	barangay: 'New kalalake',
+				// 	city: 'Olongapo',
+				// 	address_owner: 8,
+				// },
 			])
 		})
 }

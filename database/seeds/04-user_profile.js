@@ -46,7 +46,7 @@ exports.seed = function (knex) {
 					middlename: 'heeeeo',
 					age: '22',
 					contactnumber: '090783837734',
-					profile_owner: 8,
+					profile_owner: 7,
 					isDriver: true,
 				},
 				{
@@ -55,7 +55,7 @@ exports.seed = function (knex) {
 					middlename: 'hau',
 					age: '22',
 					contactnumber: '090783837734',
-					profile_owner: 9,
+					profile_owner: 8,
 				},
 			])
 		})
