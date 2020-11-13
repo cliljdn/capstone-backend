@@ -6,19 +6,13 @@ const notFound = (req, res, next) => {
 }
 
 const errorHandler = (error, req, res, next) => {
-	// const statusCode = res.statusCode === 200 ? 500 : res.statusCode
-	// res.status(statusCode)
-	// res.json({
-	// 	message: error.message,
-	// 	stack: process.env.NODE_ENV === 'production' ? 'hha' : error.stack,
-	// })
-
-	res.status(error.status || 500).send(
-		(error = {
-			status: error.status || 500,
-			message: error.message || 'Internal Server Error',
-		})
-	)
+	const statusCode = res.statusCode === 200 ? 500 : res.statusCode
+	res.status(statusCode)
+	res.json({
+		message: error.message,
+		stack: process.env.NODE_ENV === 'production' ? 'hha' : error.stack,
+		inner: error.inner || undefined,
+	})
 }
 
 module.exports = { notFound, errorHandler }
