@@ -32,11 +32,6 @@ class Companions extends Model {
 			},
 		}
 	}
-
-	$beforeInsert() {
-		this.time_created = new Date().toISOString()
-		this.date_created = new Date().toISOString()
-	}
 }
 
 module.exports = Companions

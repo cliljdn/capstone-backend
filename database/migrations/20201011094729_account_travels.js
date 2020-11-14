@@ -19,7 +19,7 @@ exports.up = async function (knex) {
 			.onDelete('cascade')
 		table.boolean('isCompanion')
 
-		table.time('time_created', { precision: 6 }).defaultTo(knex.fn.now())
+		table.time('time_created').defaultTo(knex.fn.now())
 		table.date('date_created', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 
@@ -47,7 +47,7 @@ exports.up = async function (knex) {
 			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 
-		table.time('time_created', { precision: 6 }).defaultTo(knex.fn.now())
+		table.time('time_created').defaultTo(knex.fn.now())
 		table.date('date_created', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 
@@ -84,7 +84,7 @@ exports.up = async function (knex) {
 			.inTable(tableNames.vehicle_table)
 			.onDelete('cascade')
 
-		table.time('time_boarded', { precision: 6 }).defaultTo(knex.fn.now())
+		table.time('time_boarded').defaultTo(knex.fn.now())
 		table.date('date_boarded', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 
@@ -114,7 +114,7 @@ exports.up = async function (knex) {
 			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 
-		table.time('time_entered', { precision: 6 }).defaultTo(knex.fn.now())
+		table.time('time_entered').defaultTo(knex.fn.now())
 		table.date('date_entered', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 
@@ -145,7 +145,7 @@ exports.up = async function (knex) {
 			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 
-		table.time('time_created', { precision: 6 }).defaultTo(knex.fn.now())
+		table.time('time_created').defaultTo(knex.fn.now())
 		table.date('date_created', { precision: 6 }).defaultTo(knex.fn.now(6))
 	})
 }

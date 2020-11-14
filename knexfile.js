@@ -8,6 +8,7 @@ module.exports = {
 			database: 'capstonedb',
 			user: 'root',
 			password: '',
+			timezone: 'UTC',
 			dateStrings: true,
 		},
 		pool: {

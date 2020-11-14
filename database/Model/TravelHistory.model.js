@@ -72,11 +72,6 @@ class TravelHistory extends Model {
 			},
 		}
 	}
-
-	$beforeInsert() {
-		this.time_created = new Date(0).toISOString()
-		this.date_created = new Date().toISOString()
-	}
 }
 
 module.exports = TravelHistory
