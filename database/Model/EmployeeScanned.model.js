@@ -41,11 +41,6 @@ class EmployeeScanned extends Model {
 			},
 		}
 	}
-
-	$beforeInsert() {
-		this.time_entered = new Date().toISOString()
-		this.date_entered = new Date().toISOString()
-	}
 }
 
 module.exports = EmployeeScanned
