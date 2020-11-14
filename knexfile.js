@@ -9,6 +9,7 @@ module.exports = {
 			user: 'root',
 			password: '',
 			dateStrings: true,
+			timezone: 'UTC',
 		},
 		pool: {
 			min: 2,
