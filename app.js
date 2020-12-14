@@ -7,7 +7,7 @@ const cors = require('cors')
 const compression = require('compression')
 
 app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: false }))
 app.use(
 	cors({
 		'Access-Control-Allow-Origin': '*',
