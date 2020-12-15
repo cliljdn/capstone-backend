@@ -34,6 +34,7 @@ class Accounts extends Model {
 					to: tableNames.address_table + '.address_owner',
 				},
 			},
+
 			EmployeeProfile: {
 				relation: Model.HasOneRelation,
 				modelClass: EmployeeProfile,
