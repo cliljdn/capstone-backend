@@ -20,7 +20,7 @@
 		"jsonwebtoken": "^8.5.1",
 		"knex": "^0.21.6",
 		"mysql": "^2.18.1",
-		"node-mailer": "^0.1.1",
+		"nodemailer": "^6.4.17",
 		"objection": "^2.2.3",
 		"yup": "^0.29.3"
 	},
