@@ -1,5 +1,5 @@
-const tableNames = require("../../lib/contants/TableNames");
-const Knex = require("knex");
+const tableNames = require('../../lib/contants/TableNames')
+const Knex = require('knex')
 
 /**
  *
@@ -8,73 +8,73 @@ const Knex = require("knex");
 
 exports.up = async function (knex) {
 	await knex.schema.createTable(tableNames.travel_history, function (table) {
-		table.increments("travel_id").notNullable();
-		table.string("destination");
+		table.increments('travel_id').notNullable()
+		table.string('destination')
 		table
-			.integer("user_id")
+			.integer('user_id')
 			.unsigned()
 			.index()
-			.references("user_id")
+			.references('user_id')
 			.inTable(tableNames.user_profile)
-			.onDelete("cascade");
-		table.boolean("isCompanion");
+			.onDelete('cascade')
+		table.boolean('isCompanion')
 
-		table.time("time_created").defaultTo(knex.fn.now());
-		table.date("date_created", { precision: 6 }).defaultTo(knex.fn.now(6));
-	});
+		table.dateTime('time_created').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+		table.dateTime('date_created').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+	})
 
 	await knex.schema.createTable(tableNames.companion_table, function (table) {
-		table.increments("Companion_id").notNullable();
+		table.increments('Companion_id').notNullable()
 		table
-			.integer("users_id")
+			.integer('users_id')
 			.unsigned()
 			.index()
-			.references("user_id")
+			.references('user_id')
 			.inTable(tableNames.user_profile)
-			.onDelete("cascade");
+			.onDelete('cascade')
 		table
-			.integer("travel_id")
+			.integer('travel_id')
 			.unsigned()
 			.index()
-			.references("travel_id")
+			.references('travel_id')
 			.inTable(tableNames.travel_history)
-			.onDelete("cascade");
+			.onDelete('cascade')
 		table
-			.integer("parent_id")
+			.integer('parent_id')
 			.unsigned()
 			.index()
-			.references("user_id")
+			.references('user_id')
 			.inTable(tableNames.user_profile)
-			.onDelete("cascade");
+			.onDelete('cascade')
 
-		table.time("time_created").defaultTo(knex.fn.now());
-		table.date("date_created", { precision: 6 }).defaultTo(knex.fn.now(6));
-	});
+		table.dateTime('time_created').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+		table.dateTime('date_created').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+	})
 
 	await knex.schema.createTable(tableNames.passengers, function (table) {
-		table.increments("passenger_id").notNullable();
+		table.increments('passenger_id').notNullable()
 		table
-			.integer("driver_id")
+			.integer('driver_id')
 			.unsigned()
 			.index()
-			.references("user_id")
+			.references('user_id')
 			.inTable(tableNames.user_profile)
-			.onDelete("cascade");
+			.onDelete('cascade')
 		table
-			.integer("travel_id")
+			.integer('travel_id')
 			.unsigned()
 			.index()
-			.references("travel_id")
+			.references('travel_id')
 			.inTable(tableNames.travel_history)
-			.onDelete("cascade");
+			.onDelete('cascade')
 
 		table
-			.integer("users_id")
+			.integer('users_id')
 			.unsigned()
 			.index()
-			.references("user_id")
+			.references('user_id')
 			.inTable(tableNames.user_profile)
-			.onDelete("cascade");
+			.onDelete('cascade')
 
 		// table
 		// 	.integer('vehicle_used')
@@ -84,71 +84,71 @@ exports.up = async function (knex) {
 		// 	.inTable(tableNames.vehicle_table)
 		// 	.onDelete('cascade')
 
-		table.time("time_boarded").defaultTo(knex.fn.now());
-		table.date("date_boarded", { precision: 6 }).defaultTo(knex.fn.now(6));
-	});
+		table.dateTime('time_boarded').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+		table.dateTime('date_boarded').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+	})
 
 	await knex.schema.createTable(tableNames.employee_scanned, function (table) {
-		table.increments("scanned_id").notNullable();
+		table.increments('scanned_id').notNullable()
 
 		table
-			.integer("employee_id")
+			.integer('employee_id')
 			.unsigned()
 			.index()
-			.references("employee_id")
+			.references('employee_id')
 			.inTable(tableNames.employee_profile)
-			.onDelete("cascade");
+			.onDelete('cascade')
 		table
-			.integer("est_id")
+			.integer('est_id')
 			.unsigned()
 			.index()
-			.references("establishment_id")
+			.references('establishment_id')
 			.inTable(tableNames.establishments)
-			.onDelete("cascade");
+			.onDelete('cascade')
 
 		table
-			.integer("users_id")
+			.integer('users_id')
 			.unsigned()
 			.index()
-			.references("user_id")
+			.references('user_id')
 			.inTable(tableNames.user_profile)
-			.onDelete("cascade");
+			.onDelete('cascade')
 
-		table.time("time_entered").defaultTo(knex.fn.now());
-		table.date("date_entered", { precision: 6 }).defaultTo(knex.fn.now(6));
-	});
+		table.dateTime('time_entered').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+		table.dateTime('date_entered').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+	})
 
 	await knex.schema.createTable(tableNames.est_companions, function (table) {
-		table.increments("est_comp_id").notNullable();
+		table.increments('est_comp_id').notNullable()
 
 		table
-			.integer("est_id")
+			.integer('est_id')
 			.unsigned()
 			.index()
-			.references("establishment_id")
+			.references('establishment_id')
 			.inTable(tableNames.establishments)
-			.onDelete("cascade");
+			.onDelete('cascade')
 
 		table
-			.integer("users_id")
+			.integer('users_id')
 			.unsigned()
 			.index()
-			.references("user_id")
+			.references('user_id')
 			.inTable(tableNames.user_profile)
-			.onDelete("cascade");
+			.onDelete('cascade')
 
 		table
-			.integer("parent_id")
+			.integer('parent_id')
 			.unsigned()
 			.index()
-			.references("user_id")
+			.references('user_id')
 			.inTable(tableNames.user_profile)
-			.onDelete("cascade");
+			.onDelete('cascade')
 
-		table.time("time_created").defaultTo(knex.fn.now());
-		table.date("date_created", { precision: 6 }).defaultTo(knex.fn.now(6));
-	});
-};
+		table.dateTime('time_created').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+		table.dateTime('date_created').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+	})
+}
 
 /**
  *
@@ -156,9 +156,9 @@ exports.up = async function (knex) {
  */
 
 exports.down = async function (knex) {
-	await knex.schema.dropTableIfExists(tableNames.est_companions);
-	await knex.schema.dropTableIfExists(tableNames.employee_scanned);
-	await knex.schema.dropTableIfExists(tableNames.passengers);
-	await knex.schema.dropTableIfExists(tableNames.companion_table);
-	await knex.schema.dropTableIfExists(tableNames.travel_history);
-};
+	await knex.schema.dropTableIfExists(tableNames.est_companions)
+	await knex.schema.dropTableIfExists(tableNames.employee_scanned)
+	await knex.schema.dropTableIfExists(tableNames.passengers)
+	await knex.schema.dropTableIfExists(tableNames.companion_table)
+	await knex.schema.dropTableIfExists(tableNames.travel_history)
+}
