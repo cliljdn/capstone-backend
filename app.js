@@ -63,7 +63,7 @@ const Knex = require('knex')
 const { Model } = require('objection')
 
 // Initialize knex.
-const knex = Knex(knexConfig.development)
+const knex = Knex(knexConfig.client)
 
 // Bind all Models to the knex instance. You only
 // need to do this once before you use any of

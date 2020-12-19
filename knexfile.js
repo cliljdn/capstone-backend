@@ -6,8 +6,8 @@ module.exports = {
 		connection: {
 			host: process.env.DB_HOST,
 			database: 'capstonedb',
-			user: 'root',
-			password: '',
+			user: 'cliljdn',
+			password: 'jaudian29',
 			timezone: 'UTC',
 			dateStrings: true,
 		},
