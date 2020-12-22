@@ -1,6 +1,5 @@
 const tableNames = require('../../lib/contants/TableNames')
 const Knex = require('knex')
-
 /**
  *
  * @param {Knex} knex
@@ -19,8 +18,9 @@ exports.up = async function (knex) {
 			.onDelete('cascade')
 		table.boolean('isCompanion')
 
-		table.dateTime('time_created').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
-		table.dateTime('date_created').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+		table.time('time_created')
+
+		table.date('date_created')
 	})
 
 	await knex.schema.createTable(tableNames.companion_table, function (table) {
@@ -47,8 +47,8 @@ exports.up = async function (knex) {
 			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 
-		table.dateTime('time_created').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
-		table.dateTime('date_created').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+		table.time('time_created')
+		table.date('date_created')
 	})
 
 	await knex.schema.createTable(tableNames.passengers, function (table) {
@@ -84,8 +84,9 @@ exports.up = async function (knex) {
 		// 	.inTable(tableNames.vehicle_table)
 		// 	.onDelete('cascade')
 
-		table.dateTime('time_boarded').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
-		table.dateTime('date_boarded').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+		table.time('time_boarded')
+
+		table.date('date_boarded')
 	})
 
 	await knex.schema.createTable(tableNames.employee_scanned, function (table) {
@@ -114,8 +115,8 @@ exports.up = async function (knex) {
 			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 
-		table.dateTime('time_entered').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
-		table.dateTime('date_entered').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+		table.time('time_entered')
+		table.date('date_entered')
 	})
 
 	await knex.schema.createTable(tableNames.est_companions, function (table) {
@@ -145,8 +146,9 @@ exports.up = async function (knex) {
 			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 
-		table.dateTime('time_created').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
-		table.dateTime('date_created').defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+		table.time('time_created')
+
+		table.date('date_created')
 	})
 }
 
