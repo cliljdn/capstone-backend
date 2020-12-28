@@ -26,7 +26,7 @@ exports.up = async function (knex) {
 
 		table.string('position').nullable()
 		table
-			.integer('profile_owner')
+			.integer('account_id')
 			.unsigned()
 			.references('account_id')
 			.inTable(tableNames.accounts_table)
@@ -39,7 +39,6 @@ exports.up = async function (knex) {
 			.inTable(tableNames.establishments)
 			.onDelete('CASCADE')
 			.index()
-		table.boolean('isDriver').defaultTo(false)
 	})
 
 	await knex.schema.createTable(tableNames.address_table, function (table) {
@@ -48,7 +47,7 @@ exports.up = async function (knex) {
 		table.string('barangay')
 		table.string('city')
 		table
-			.integer('address_owner')
+			.integer('account_id')
 			.unsigned()
 			.references('account_id')
 			.inTable(tableNames.accounts_table)
@@ -64,7 +63,7 @@ exports.up = async function (knex) {
 		table.string('body_number')
 		table.boolean('isActive')
 		table
-			.integer('vehicle_owner')
+			.integer('account_id')
 			.unsigned()
 			.references('user_id')
 			.inTable(tableNames.user_profile)
