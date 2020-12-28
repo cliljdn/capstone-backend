@@ -11,11 +11,8 @@ class Accounts extends Model {
 	}
 
 	static get relationMappings() {
-		const EmployeeProfile = require('./EmployeeProfile.model')
 		const UserProfile = require('./UserProfile.model')
-		const TravelHistory = require('./TravelHistory.model')
-		const Companions = require('./Companion_Table.model')
-		const EmployeeScanned = require('./EmployeeScanned.model')
+
 		const AddressModel = require('./Address.model')
 		return {
 			UserProfile: {
@@ -32,15 +29,6 @@ class Accounts extends Model {
 				join: {
 					from: tableNames.accounts_table + '.account_id',
 					to: tableNames.address_table + '.address_owner',
-				},
-			},
-
-			EmployeeProfile: {
-				relation: Model.HasOneRelation,
-				modelClass: EmployeeProfile,
-				join: {
-					from: tableNames.accounts_table + '.account_id',
-					to: tableNames.employee_profile + '.profile_owner',
 				},
 			},
 		}
