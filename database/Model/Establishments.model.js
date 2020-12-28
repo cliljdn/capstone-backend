@@ -1,4 +1,5 @@
 const { Model } = require('objection')
+
 const tableConstants = require('../../lib/contants/TableNames')
 
 const UserProfile = require('./UserProfile.model')

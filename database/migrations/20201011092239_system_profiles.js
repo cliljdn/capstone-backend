@@ -5,23 +5,6 @@ const Knex = require('knex')
  * @param {Knex} knex
  */
 exports.up = async function (knex) {
-	await knex.schema.createTable(tableNames.admin_profile, function (table) {
-		table.increments('admin_id').notNullable()
-		table.string('firstname')
-		table.string('lastname')
-		table.string('middlename')
-		table.date('birthday')
-		table.string('contactnumber')
-		table.specificType('image', 'longtext')
-		table
-			.integer('profile_owner')
-			.unsigned()
-			.references('admin_id')
-			.inTable(tableNames.admin_accounts)
-			.onDelete('CASCADE')
-			.index()
-	})
-
 	await knex.schema.createTable(tableNames.user_profile, function (table) {
 		table.increments('user_id').notNullable()
 		table.string('firstname')
@@ -30,11 +13,20 @@ exports.up = async function (knex) {
 		table.date('birthday')
 		table.string('contactnumber')
 		table.specificType('image', 'longtext')
+
+		table.string('position').nullable()
 		table
 			.integer('profile_owner')
 			.unsigned()
 			.references('account_id')
 			.inTable(tableNames.accounts_table)
+			.onDelete('CASCADE')
+			.index()
+		table
+			.integer('working_in')
+			.unsigned()
+			.references('establishment_id')
+			.inTable(tableNames.establishments)
 			.onDelete('CASCADE')
 			.index()
 		table.boolean('isDriver').defaultTo(false)
@@ -48,32 +40,6 @@ exports.up = async function (knex) {
 		table.string('establishment_owner')
 		table.string('email')
 		table.boolean('isActive')
-	})
-
-	await knex.schema.createTable(tableNames.employee_profile, function (table) {
-		table.increments('employee_id').notNullable()
-		table.string('firstname')
-		table.string('lastname')
-		table.string('middlename')
-		table.date('birthday')
-		table.string('contactnumber')
-		table.string('position')
-		table.specificType('image', 'longtext')
-		table
-			.integer('profile_owner')
-			.unsigned()
-			.references('account_id')
-			.inTable(tableNames.accounts_table)
-			.onDelete('CASCADE')
-			.index()
-
-		table
-			.integer('working_in')
-			.unsigned()
-			.references('establishment_id')
-			.inTable(tableNames.establishments)
-			.onDelete('CASCADE')
-			.index()
 	})
 
 	await knex.schema.createTable(tableNames.vehicle_table, function (table) {
@@ -105,34 +71,6 @@ exports.up = async function (knex) {
 			.onDelete('CASCADE')
 			.index()
 	})
-
-	await knex.schema.createTable(tableNames.admin_address, function (table) {
-		table.increments('address_id').notNullable()
-		table.string('house_lot_number')
-		table.string('barangay')
-		table.string('city')
-		table
-			.integer('address_owner')
-			.unsigned()
-			.references('admin_id')
-			.inTable(tableNames.admin_profile)
-			.onDelete('CASCADE')
-			.index()
-	})
-
-	await knex.schema.createTable(tableNames.employee_address, function (table) {
-		table.increments('address_id').notNullable()
-		table.string('house_lot_number')
-		table.string('barangay')
-		table.string('city')
-		table
-			.integer('address_owner')
-			.unsigned()
-			.references('employee_id')
-			.inTable(tableNames.employee_profile)
-			.onDelete('CASCADE')
-			.index()
-	})
 }
 
 /**
@@ -141,12 +79,8 @@ exports.up = async function (knex) {
  */
 
 exports.down = async function (knex) {
-	await knex.schema.dropTableIfExists(tableNames.employee_address)
-	await knex.schema.dropTableIfExists(tableNames.admin_address)
 	await knex.schema.dropTableIfExists(tableNames.address_table)
 	await knex.schema.dropTableIfExists(tableNames.vehicle_table)
-	await knex.schema.dropTableIfExists(tableNames.employee_profile)
 	await knex.schema.dropTableIfExists(tableNames.establishments)
 	await knex.schema.dropTableIfExists(tableNames.user_profile)
-	await knex.schema.dropTableIfExists(tableNames.admin_profile)
 }

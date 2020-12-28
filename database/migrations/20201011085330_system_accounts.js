@@ -14,13 +14,6 @@ exports.up = async (knex) => {
 		table.boolean('isActive').defaultTo(false)
 		table.timestamps(true, true)
 	})
-
-	await knex.schema.createTable(tableNames.admin_accounts, function (table) {
-		table.increments('admin_id').notNullable()
-		table.string('email')
-		table.string('password'), table.boolean('isActive')
-		table.timestamps(true, true)
-	})
 }
 
 /**
