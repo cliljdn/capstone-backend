@@ -11,13 +11,13 @@ exports.seed = function (knex) {
 				{
 					email: 'okaylangakoat@gmail.com',
 					password: pass,
-					account_type: 'User',
+					account_type: 'Individual',
 					isActive: 1,
 				},
 				{
 					email: 'graduating@gmail.com',
 					password: pass,
-					account_type: 'User',
+					account_type: 'Individual',
 					isActive: 1,
 				},
 				{
@@ -35,25 +35,25 @@ exports.seed = function (knex) {
 				{
 					email: 'kamusta@gmail.com',
 					password: pass,
-					account_type: 'Employee',
+					account_type: 'Establishment',
 					isActive: 1,
 				},
 				{
 					email: 'imokay@gmail.com',
 					password: pass,
-					account_type: 'Employee',
+					account_type: 'Establishment',
 					isActive: 1,
 				},
 				{
 					email: 'caliljaudiannn@outlook.com',
 					password: pass,
-					account_type: 'Driver',
+					account_type: 'Admin',
 					isActive: 1,
 				},
 				{
 					email: 'caliljaudiannn@qqe.com',
 					password: pass,
-					account_type: 'User',
+					account_type: 'Admin',
 					isActive: 1,
 				},
 			])

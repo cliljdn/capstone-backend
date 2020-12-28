@@ -16,13 +16,6 @@ exports.up = async function (knex) {
 			.references('user_id')
 			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
-		table
-			.integer('travel_id')
-			.unsigned()
-			.index()
-			.references('travel_id')
-			.inTable(tableNames.travel_history)
-			.onDelete('cascade')
 
 		table
 			.integer('users_id')
@@ -60,8 +53,8 @@ exports.up = async function (knex) {
 			.integer('employee_id')
 			.unsigned()
 			.index()
-			.references('employee_id')
-			.inTable(tableNames.employee_profile)
+			.references('user_id')
+			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 		table
 			.integer('est_id')
@@ -72,7 +65,7 @@ exports.up = async function (knex) {
 			.onDelete('cascade')
 
 		table
-			.integer('users_id')
+			.integer('companion_id')
 			.unsigned()
 			.index()
 			.references('user_id')
