@@ -15,6 +15,7 @@ app.use(
 )
 app.use(helmet())
 app.use(morgan('tiny'))
+
 app.use(
 	compression({
 		level: 6,
@@ -40,22 +41,18 @@ app.get('/', (req, res) => {
 // constants for endpoints Mobile
 const accountEnpoints = require('./lib/Endpoints/Mobile/accounts.api')
 const establishmentEndpoint = require('./lib/Endpoints/establishments/establishment.api')
-const DriverProfileEndpoints = require('./lib/Endpoints/Drivers/Driver.api')
+
 const AddressEndpoints = require('./lib/Endpoints/Address/Address.api')
-const listAccountEndpoints = require('./lib/Endpoints/Mobile/ListAccounts.api')
+// const listAccountEndpoints = require('./lib/Endpoints/Mobile/ListAccounts.api')
 
 // constants for endpoints Admin
-const adminEndpoints = require('./lib/Endpoints/Admin/Admin.api')
-const ListDrivers = require('./lib/Endpoints/Admin/List.api')
 
 // mounts endpoints
 app.use('/api/v1', accountEnpoints)
 app.use('/api/v1', establishmentEndpoint)
-app.use('/api/v1', DriverProfileEndpoints)
 app.use('/api/v1', AddressEndpoints)
-app.use('/api/v1', listAccountEndpoints)
-app.use('/api/v1', adminEndpoints)
-app.use('/api/v1', ListDrivers)
+// app.use('/api/v1', listAccountEndpoints)
+// app.use('/api/v1', adminEndpoints)
 
 // constants for Model
 const knexConfig = require('./knexfile')
