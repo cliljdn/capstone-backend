@@ -12,7 +12,6 @@ class Accounts extends Model {
 
 	static get relationMappings() {
 		const UserProfile = require('./UserProfile.model')
-
 		const AddressModel = require('./Address.model')
 		return {
 			UserProfile: {
