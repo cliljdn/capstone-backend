@@ -44,18 +44,6 @@ exports.seed = function (knex) {
 					account_type: 'Establishment',
 					isActive: 1,
 				},
-				{
-					email: 'caliljaudiannn@outlook.com',
-					password: pass,
-					account_type: 'Admin',
-					isActive: 1,
-				},
-				{
-					email: 'caliljaudiannn@qqe.com',
-					password: pass,
-					account_type: 'Admin',
-					isActive: 1,
-				},
 			])
 		})
 }
