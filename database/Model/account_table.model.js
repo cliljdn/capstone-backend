@@ -19,7 +19,7 @@ class Accounts extends Model {
 				modelClass: UserProfile,
 				join: {
 					from: tableNames.accounts_table + '.account_id',
-					to: tableNames.user_profile + '.profile_owner',
+					to: tableNames.user_profile + '.account_id',
 				},
 			},
 			AccountAddress: {
@@ -27,7 +27,7 @@ class Accounts extends Model {
 				modelClass: AddressModel,
 				join: {
 					from: tableNames.accounts_table + '.account_id',
-					to: tableNames.address_table + '.address_owner',
+					to: tableNames.address_table + '.account_id',
 				},
 			},
 		}
