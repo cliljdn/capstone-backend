@@ -1,4 +1,4 @@
-;+require('dotenv').config()
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
@@ -42,14 +42,14 @@ app.get('/', (req, res) => {
 const accountEnpoints = require('./lib/Endpoints/Mobile/accounts.api')
 
 const AddressEndpoints = require('./lib/Endpoints/Address/Address.api')
-// const listAccountEndpoints = require('./lib/Endpoints/Mobile/ListAccounts.api')
+const listAccountEndpoints = require('./lib/Endpoints/Mobile/ListAccounts.api')
 
 // constants for endpoints Admin
 
 // mounts endpoints
 app.use('/api/v1', accountEnpoints)
 app.use('/api/v1', AddressEndpoints)
-// app.use('/api/v1', listAccountEndpoints)
+app.use('/api/v1', listAccountEndpoints)
 // app.use('/api/v1', adminEndpoints)
 
 // constants for Model
