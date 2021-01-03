@@ -12,7 +12,7 @@ exports.seed = function (knex) {
 					vehicle_type: 'Jeepney',
 					body_number: '2214',
 					isActive: true,
-					vehicle_owner: 3,
+					account_id: 3,
 				},
 				{
 					plate_number: 'PX223',
@@ -20,15 +20,7 @@ exports.seed = function (knex) {
 					vehicle_type: 'Jeepney',
 					body_number: '2215',
 					isActive: true,
-					vehicle_owner: 4,
-				},
-				{
-					plate_number: 'PX223',
-					color: 'Blue',
-					vehicle_type: 'Tricycle',
-					body_number: '2213',
-					isActive: true,
-					vehicle_owner: 5,
+					account_id: 4,
 				},
 			])
 		})

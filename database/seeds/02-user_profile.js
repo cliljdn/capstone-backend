@@ -12,7 +12,7 @@ exports.seed = function (knex) {
 					middlename: 'ngan',
 					birthday: '1997-03-12',
 					contactnumber: '090783832454',
-					profile_owner: 1,
+					account_id: 1,
 				},
 				{
 					firstname: 'Yuu',
@@ -20,7 +20,7 @@ exports.seed = function (knex) {
 					middlename: 'hau',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
-					profile_owner: 2,
+					account_id: 2,
 				},
 				{
 					firstname: 'Joey',
@@ -28,7 +28,7 @@ exports.seed = function (knex) {
 					middlename: 'rawr',
 					birthday: '1997-03-12',
 					contactnumber: '090783832454',
-					profile_owner: 3,
+					account_id: 3,
 				},
 				{
 					firstname: 'Yuu',
@@ -36,7 +36,7 @@ exports.seed = function (knex) {
 					middlename: 'hau',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
-					profile_owner: 4,
+					account_id: 4,
 				},
 				{
 					firstname: 'Ester',
@@ -44,7 +44,7 @@ exports.seed = function (knex) {
 					middlename: 'heeeeo',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
-					profile_owner: 5,
+					account_id: 5,
 				},
 				{
 					firstname: 'Greg',
@@ -52,6 +52,7 @@ exports.seed = function (knex) {
 					middlename: 'hau',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
+					account_id: 6,
 				},
 			])
 		})

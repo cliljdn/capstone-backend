@@ -5,16 +5,6 @@ const Knex = require('knex')
  * @param {Knex} knex
  */
 exports.up = async function (knex) {
-	await knex.schema.createTable(tableNames.establishments, function (table) {
-		table.increments('establishment_id').notNullable()
-		table.string('name')
-		table.string('street')
-		table.string('telephone_number')
-		table.string('establishment_owner')
-		table.string('email')
-		table.boolean('isActive')
-	})
-
 	await knex.schema.createTable(tableNames.user_profile, function (table) {
 		table.increments('user_id').notNullable()
 		table.string('firstname')
@@ -81,5 +71,4 @@ exports.down = async function (knex) {
 	await knex.schema.dropTableIfExists(tableNames.vehicle_table)
 	await knex.schema.dropTableIfExists(tableNames.address_table)
 	await knex.schema.dropTableIfExists(tableNames.user_profile)
-	await knex.schema.dropTableIfExists(tableNames.establishments)
 }
