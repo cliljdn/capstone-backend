@@ -6,30 +6,29 @@ const Knex = require('knex')
  */
 
 exports.up = async function (knex) {
-	await knex.schema.createTable(tableNames.passengers, function (table) {
-		table.increments('passenger_id').notNullable()
+	await knex.schema.createTable(tableNames.travel_history, function (table) {
+		table.increments('travel_id').notNullable()
 		table.string('destination')
 		table
 			.integer('driver_id')
 			.unsigned()
 			.index()
-			.references('user_id')
-			.inTable(tableNames.user_profile)
+			.references('account_id')
+			.inTable(tableNames.accounts_table)
 			.onDelete('cascade')
 
 		table
-			.integer('users_id')
+			.integer('companion_id')
 			.unsigned()
 			.index()
-			.references('user_id')
-			.inTable(tableNames.user_profile)
+			.references('account_id')
+			.inTable(tableNames.accounts_table)
 			.onDelete('cascade')
 
 		table
-			.integer('vehicle_used')
-			.unsigned()
+			.string('plate_number')
 			.index()
-			.references('vehicle_id')
+			.references('plate_number')
 			.inTable(tableNames.vehicle_table)
 			.onDelete('cascade')
 
@@ -37,8 +36,8 @@ exports.up = async function (knex) {
 			.integer('parent_id')
 			.unsigned()
 			.index()
-			.references('user_id')
-			.inTable(tableNames.user_profile)
+			.references('account_id')
+			.inTable(tableNames.accounts_table)
 			.onDelete('cascade')
 
 		table.time('time_boarded')
@@ -53,30 +52,23 @@ exports.up = async function (knex) {
 			.integer('employee_id')
 			.unsigned()
 			.index()
-			.references('user_id')
-			.inTable(tableNames.user_profile)
-			.onDelete('cascade')
-		table
-			.integer('est_id')
-			.unsigned()
-			.index()
-			.references('establishment_id')
-			.inTable(tableNames.establishments)
+			.references('account_id')
+			.inTable(tableNames.accounts_table)
 			.onDelete('cascade')
 
 		table
 			.integer('companion_id')
 			.unsigned()
 			.index()
-			.references('user_id')
-			.inTable(tableNames.user_profile)
+			.references('account_id')
+			.inTable(tableNames.accounts_table)
 			.onDelete('cascade')
 		table
 			.integer('parent_id')
 			.unsigned()
 			.index()
-			.references('user_id')
-			.inTable(tableNames.user_profile)
+			.references('account_id')
+			.inTable(tableNames.accounts_table)
 			.onDelete('cascade')
 
 		table.time('time_entered')
@@ -91,5 +83,5 @@ exports.up = async function (knex) {
 
 exports.down = async function (knex) {
 	await knex.schema.dropTableIfExists(tableNames.employee_scanned)
-	await knex.schema.dropTableIfExists(tableNames.passengers)
+	await knex.schema.dropTableIfExists(tableNames.travel_history)
 }
