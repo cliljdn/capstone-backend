@@ -9,6 +9,7 @@ exports.up = async function (knex) {
 	await knex.schema.createTable(tableNames.travel_history, function (table) {
 		table.increments('travel_id').notNullable()
 		table.string('destination')
+
 		table
 			.integer('driver_id')
 			.unsigned()
