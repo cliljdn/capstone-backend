@@ -49,6 +49,12 @@ exports.up = async function (knex) {
 	await knex.schema.createTable(tableNames.employee_scanned, function (table) {
 		table.increments('scanned_id').notNullable()
 
+		table.string('firstname').nullable()
+		table.string('middlename').nullable()
+		table.string('lastname').nullable()
+		table.string('contact_number').nullable()
+		table.string('address').nullable()
+
 		table
 			.integer('employee_id')
 			.unsigned()
@@ -58,14 +64,7 @@ exports.up = async function (knex) {
 			.onDelete('cascade')
 
 		table
-			.integer('companion_id')
-			.unsigned()
-			.index()
-			.references('account_id')
-			.inTable(tableNames.accounts_table)
-			.onDelete('cascade')
-		table
-			.integer('parent_id')
+			.integer('account_id')
 			.unsigned()
 			.index()
 			.references('account_id')
