@@ -8,18 +8,18 @@ const Knex = require('knex')
 exports.up = async function (knex) {
 	await knex.schema.createTable(tableNames.travel_history, function (table) {
 		table.increments('travel_id').notNullable()
+		table.string('batch').notNullable()
+
+		table.string('firstname').nullable()
+		table.string('middlename').nullable()
+		table.string('lastname').nullable()
+		table.string('contact_number').nullable()
+		table.string('address').nullable()
+
 		table.string('destination')
 
 		table
 			.integer('driver_id')
-			.unsigned()
-			.index()
-			.references('account_id')
-			.inTable(tableNames.accounts_table)
-			.onDelete('cascade')
-
-		table
-			.integer('companion_id')
 			.unsigned()
 			.index()
 			.references('account_id')
@@ -48,6 +48,7 @@ exports.up = async function (knex) {
 
 	await knex.schema.createTable(tableNames.employee_scanned, function (table) {
 		table.increments('scanned_id').notNullable()
+		table.string('batch').notNullable()
 
 		table.string('firstname').nullable()
 		table.string('middlename').nullable()
