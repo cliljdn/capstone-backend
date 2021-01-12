@@ -39,10 +39,10 @@ app.get('/', (req, res) => {
 })
 
 // constants for endpoints Mobile
-const accountEnpoints = require('./lib/Endpoints/Mobile/accounts.api')
+const accountEnpoints = require('./lib/Endpoints/web/postreq/accounts.api')
 
-const AddressEndpoints = require('./lib/Endpoints/Address/Address.api')
-const listAccountEndpoints = require('./lib/Endpoints/Mobile/ListAccounts.api')
+const AddressEndpoints = require('./lib/Endpoints/web/Address/Address.api')
+const listAccountEndpoints = require('./lib/Endpoints/web/list/ListAccounts.api')
 
 // constants for endpoints Admin
 
