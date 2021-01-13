@@ -22,6 +22,7 @@ class Accounts extends Model {
 					to: tableNames.user_profile + '.account_id',
 				},
 			},
+
 			AccountAddress: {
 				relation: Model.HasOneRelation,
 				modelClass: AddressModel,

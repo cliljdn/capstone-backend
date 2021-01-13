@@ -6,7 +6,9 @@ class EmployeeScanned extends Model {
 		return tableConstants.employee_scanned
 	}
 
-	static get relationMappings() {
-		return {}
+	static get idColumn() {
+		return 'scanned_id'
 	}
 }
+
+module.exports = EmployeeScanned
