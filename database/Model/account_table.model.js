@@ -13,6 +13,8 @@ class Accounts extends Model {
 	static get relationMappings() {
 		const UserProfile = require('./UserProfile.model')
 		const AddressModel = require('./Address.model')
+		const EmployeeScanned = require('./EmployeeScanned.model')
+		const Establishments = require('./establishment.model')
 		return {
 			UserProfile: {
 				relation: Model.HasOneRelation,
@@ -31,6 +33,17 @@ class Accounts extends Model {
 					to: tableNames.address_table + '.account_id',
 				},
 			},
+
+			ListEnteredEst: {
+				relation: Model.BelongsToOneRelation,
+				modelClass: EmployeeScanned,
+				join: {
+					from: tableNames.accounts_table + '.account_id',
+					to: tableNames.employee_scanned + '.account_id',
+				},
+			},
+
+			// Employee,
 		}
 	}
 }

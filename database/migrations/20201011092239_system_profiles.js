@@ -12,6 +12,14 @@ exports.up = async function (knex) {
 		table.string('telephone_number')
 		table.string('est_owner')
 		table.string('email')
+
+		table
+			.integer('account_id')
+			.unsigned()
+			.references('account_id')
+			.inTable(tableNames.accounts_table)
+			.onDelete('CASCADE')
+			.index()
 	})
 
 	await knex.schema.createTable(tableNames.user_profile, function (table) {
@@ -24,19 +32,12 @@ exports.up = async function (knex) {
 		table.specificType('image', 'longtext')
 
 		table.string('position').nullable()
+
 		table
 			.integer('account_id')
 			.unsigned()
 			.references('account_id')
 			.inTable(tableNames.accounts_table)
-			.onDelete('CASCADE')
-			.index()
-
-		table
-			.integer('est_id')
-			.unsigned()
-			.references('est_id')
-			.inTable(tableNames.establishments)
 			.onDelete('CASCADE')
 			.index()
 	})

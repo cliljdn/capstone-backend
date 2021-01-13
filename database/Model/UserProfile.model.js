@@ -13,12 +13,12 @@ class UserProfile extends Model {
 	}
 
 	static get foreignId() {
-		return 'profile_owner'
+		return 'account_id'
 	}
 
 	static get relationMappings() {
 		const Passengers = require('./Passengers.model')
-		const Vehicles = require('./Vehicle.model')
+		const Establishment = require('./establishment.model')
 
 		return {}
 	}

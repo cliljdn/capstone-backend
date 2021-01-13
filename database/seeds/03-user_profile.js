@@ -45,7 +45,6 @@ exports.seed = function (knex) {
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
 					account_id: 5,
-					est_id: 1,
 				},
 				{
 					firstname: 'Greg',
@@ -54,7 +53,6 @@ exports.seed = function (knex) {
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
 					account_id: 6,
-					est_id: 2,
 				},
 			])
 		})

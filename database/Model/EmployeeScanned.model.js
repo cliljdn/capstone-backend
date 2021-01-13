@@ -9,6 +9,21 @@ class EmployeeScanned extends Model {
 	static get idColumn() {
 		return 'scanned_id'
 	}
+
+	static get relationMappings() {
+		const Establishment = require('./establishment.model')
+
+		return {
+			estList: {
+				relation: Model.HasOneRelation,
+				modelClass: () => Establishment,
+				join: {
+					from: tableConstants.employee_scanned + '.employee_id',
+					to: tableConstants.establishments + '.account_id',
+				},
+			},
+		}
+	}
 }
 
 module.exports = EmployeeScanned

@@ -61,11 +61,11 @@ exports.up = async function (knex) {
 			.unsigned()
 			.index()
 			.references('account_id')
-			.inTable(tableNames.accounts_table)
+			.inTable(tableNames.user_profile)
 			.onDelete('cascade')
 
 		table
-			.integer('account_id')
+			.integer('parent_id')
 			.unsigned()
 			.index()
 			.references('account_id')

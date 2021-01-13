@@ -44,13 +44,13 @@ const accountEnpoints = require('./lib/Endpoints/web/postreq/accounts.api')
 const AddressEndpoints = require('./lib/Endpoints/web/Address/Address.api')
 const listAccountEndpoints = require('./lib/Endpoints/web/list/ListAccounts.api')
 
-// constants for endpoints Admin
+const trasactionList = require('./lib/Endpoints/web/list/transactionList.api')
 
 // mounts endpoints
 app.use('/api/v1', accountEnpoints)
 app.use('/api/v1', AddressEndpoints)
 app.use('/api/v1', listAccountEndpoints)
-// app.use('/api/v1', adminEndpoints)
+app.use('/api/v1', trasactionList)
 
 // constants for Model
 const knexConfig = require('./knexfile')
