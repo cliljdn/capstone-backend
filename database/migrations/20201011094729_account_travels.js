@@ -34,7 +34,7 @@ exports.up = async function (knex) {
 			.onDelete('cascade')
 
 		table
-			.integer('parent_id')
+			.integer('account_id')
 			.unsigned()
 			.index()
 			.references('account_id')
@@ -65,7 +65,7 @@ exports.up = async function (knex) {
 			.onDelete('cascade')
 
 		table
-			.integer('parent_id')
+			.integer('account_id')
 			.unsigned()
 			.index()
 			.references('account_id')
