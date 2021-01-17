@@ -17,7 +17,7 @@ class UserProfile extends Model {
 	}
 
 	static get relationMappings() {
-		const Passengers = require('./Passengers.model')
+		const Passengers = require('./travelhistory.model')
 		const Establishment = require('./establishment.model')
 
 		return {}
