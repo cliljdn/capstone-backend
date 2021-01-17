@@ -11,10 +11,7 @@ exports.up = async function (knex) {
 		table.string('batch').notNullable()
 
 		table.string('firstname').nullable()
-		table.string('middlename').nullable()
 		table.string('lastname').nullable()
-		table.string('contact_number').nullable()
-		table.string('address').nullable()
 
 		table.string('destination')
 
@@ -51,17 +48,22 @@ exports.up = async function (knex) {
 		table.string('batch').notNullable()
 
 		table.string('firstname').nullable()
-		table.string('middlename').nullable()
 		table.string('lastname').nullable()
-		table.string('contact_number').nullable()
-		table.string('address').nullable()
+
+		table
+			.integer('est_id')
+			.unsigned()
+			.index()
+			.references('est_id')
+			.inTable(tableNames.establishments)
+			.onDelete('cascade')
 
 		table
 			.integer('employee_id')
 			.unsigned()
 			.index()
 			.references('account_id')
-			.inTable(tableNames.user_profile)
+			.inTable(tableNames.accounts_table)
 			.onDelete('cascade')
 
 		table

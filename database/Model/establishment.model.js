@@ -7,7 +7,7 @@ class Establishment extends Model {
 	}
 
 	static get idColumn() {
-		return 'account_id'
+		return 'est_id'
 	}
 
 	static get relationMappings() {
