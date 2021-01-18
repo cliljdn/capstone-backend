@@ -7,7 +7,7 @@ class DriverVehicles extends Model {
 	}
 
 	static get idColumn() {
-		return 'vehicle_id'
+		return 'plate_number'
 	}
 }
 
