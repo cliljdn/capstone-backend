@@ -12,7 +12,6 @@ exports.seed = function (knex) {
 					street: 'ulo ng apo olongapo city',
 					telephone_number: '223-9020',
 					est_owner: 'Donald khan',
-					email: 'jollibeeulongapo@gmail.com',
 					account_id: 5,
 				},
 				{
@@ -20,7 +19,6 @@ exports.seed = function (knex) {
 					street: 'Magsaysay drive olongapo city',
 					telephone_number: '223-8383',
 					est_owner: 'Macdo',
-					email: 'Mcdonaldmagsaysay@gmail.com',
 					account_id: 6,
 				},
 			])

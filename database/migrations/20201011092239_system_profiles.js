@@ -11,7 +11,6 @@ exports.up = async function (knex) {
 		table.string('street')
 		table.string('telephone_number')
 		table.string('est_owner')
-		table.string('email')
 
 		table
 			.integer('account_id')
@@ -71,6 +70,22 @@ exports.up = async function (knex) {
 			.onDelete('CASCADE')
 			.index()
 	})
+
+	await knex.schema.createTable(tableNames.employee_sched, function (table) {
+		table.increments('sched_id').notNullable()
+
+		table
+			.integer('user_id')
+			.unsigned()
+			.references('user_id')
+			.inTable(tableNames.user_profile)
+			.onDelete('CASCADE')
+			.index()
+
+		table.time('time_in')
+		table.time('time_out')
+		table.date('date_occur')
+	})
 }
 
 /**
@@ -79,6 +94,7 @@ exports.up = async function (knex) {
  */
 
 exports.down = async function (knex) {
+	await knex.schema.dropTableIfExists(tableNames.employee_sched)
 	await knex.schema.dropTableIfExists(tableNames.address_table)
 	await knex.schema.dropTableIfExists(tableNames.vehicle_table)
 	await knex.schema.dropTableIfExists(tableNames.user_profile)
