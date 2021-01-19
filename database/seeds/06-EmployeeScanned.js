@@ -47,7 +47,7 @@ exports.seed = function (knex) {
 					est_id: 2,
 					account_id: 1,
 					time_entered: '4:00',
-					date_entered: '2020-12-12',
+					date_entered: '2020-12-13',
 				},
 				{
 					batch: '20201212232',
@@ -57,7 +57,7 @@ exports.seed = function (knex) {
 					est_id: 2,
 					account_id: 1,
 					time_entered: '4:00',
-					date_entered: '2020-12-12',
+					date_entered: '2020-12-13',
 				},
 
 				{
@@ -68,7 +68,7 @@ exports.seed = function (knex) {
 					est_id: 2,
 					account_id: 1,
 					time_entered: '6:00',
-					date_entered: '2020-12-12',
+					date_entered: '2020-12-13',
 				},
 
 				{
@@ -79,7 +79,7 @@ exports.seed = function (knex) {
 					est_id: 2,
 					account_id: 1,
 					time_entered: '6:00',
-					date_entered: '2020-12-12',
+					date_entered: '2020-12-13',
 				},
 
 				{
@@ -90,7 +90,7 @@ exports.seed = function (knex) {
 					est_id: 2,
 					account_id: 1,
 					time_entered: '7:00',
-					date_entered: '2020-12-12',
+					date_entered: '2020-12-13',
 				},
 
 				{
@@ -101,7 +101,7 @@ exports.seed = function (knex) {
 					est_id: 2,
 					account_id: 1,
 					time_entered: '7:00',
-					date_entered: '2020-12-12',
+					date_entered: '2020-12-13',
 				},
 			])
 		})
