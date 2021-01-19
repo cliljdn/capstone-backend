@@ -20,7 +20,17 @@ class UserProfile extends Model {
 		const Passengers = require('./travelhistory.model')
 		const Establishment = require('./establishment.model')
 
-		return {}
+		return {
+			getNames: {
+				relation: Model.HasManyRelation,
+				modelClass: () => Passengers,
+
+				join: {
+					from: tableNames.user_profile + '.account_id',
+					to: tableNames.travel_history + '.account_id',
+				},
+			},
+		}
 	}
 }
 
