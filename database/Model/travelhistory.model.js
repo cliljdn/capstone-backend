@@ -8,7 +8,17 @@ class TravelHistory extends Model {
 
 	static get relationMappings() {
 		const UserProfile = require('./UserProfile.model')
-		return {}
+		return {
+			DriverPassenger: {
+				relation: Model.HasManyRelation,
+				modelClass: () => UserProfile,
+
+				join: {
+					from: tableNames.travel_history + '.account_id',
+					to: tableNames.user_profile + '.account_id',
+				},
+			},
+		}
 	}
 }
 
