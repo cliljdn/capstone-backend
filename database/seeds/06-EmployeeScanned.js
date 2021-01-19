@@ -46,7 +46,7 @@ exports.seed = function (knex) {
 					employee_id: 6,
 					est_id: 2,
 					account_id: 2,
-					time_entered: '2:23',
+					time_entered: '4:00',
 					date_entered: '2020-12-12',
 				},
 				{
@@ -56,7 +56,51 @@ exports.seed = function (knex) {
 					employee_id: 6,
 					est_id: 2,
 					account_id: 2,
-					time_entered: '2:23',
+					time_entered: '4:00',
+					date_entered: '2020-12-12',
+				},
+
+				{
+					batch: '20201212237',
+					firstname: 'Krisha',
+					lastname: 'Concha',
+					employee_id: 6,
+					est_id: 2,
+					account_id: 7,
+					time_entered: '6:00',
+					date_entered: '2020-12-12',
+				},
+
+				{
+					batch: '20201212237',
+					firstname: 'Jose',
+					lastname: 'Salde',
+					employee_id: 6,
+					est_id: 2,
+					account_id: 7,
+					time_entered: '6:00',
+					date_entered: '2020-12-12',
+				},
+
+				{
+					batch: '20201212238',
+					firstname: 'Kamote',
+					lastname: 'Concha',
+					employee_id: 6,
+					est_id: 2,
+					account_id: 8,
+					time_entered: '7:00',
+					date_entered: '2020-12-12',
+				},
+
+				{
+					batch: '20201212238',
+					firstname: 'Goku',
+					lastname: 'Salde',
+					employee_id: 6,
+					est_id: 2,
+					account_id: 8,
+					time_entered: '7:00',
 					date_entered: '2020-12-12',
 				},
 			])

@@ -54,6 +54,39 @@ exports.seed = function (knex) {
 					contactnumber: '090783837734',
 					account_id: 6,
 				},
+
+				{
+					firstname: 'Josh',
+					lastname: 'haha',
+					middlename: 'hau',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 7,
+				},
+				{
+					firstname: 'brylle',
+					lastname: 'ako',
+					middlename: 'hau',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 8,
+				},
+				{
+					firstname: 'gleason',
+					lastname: 'Holt',
+					middlename: 'hau',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 9,
+				},
+				{
+					firstname: 'thirty',
+					lastname: 'four',
+					middlename: 'hau',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 10,
+				},
 			])
 		})
 }

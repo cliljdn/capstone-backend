@@ -44,6 +44,33 @@ exports.seed = function (knex) {
 					account_type: 'Establishment',
 					isActive: 1,
 				},
+
+				{
+					email: 'akolangto@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+				{
+					email: 'baronlangmalakas@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+
+				{
+					email: 'sobranglakas@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+
+				{
+					email: 'papasacapstone@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
 			])
 		})
 }
