@@ -12,6 +12,7 @@ exports.up = async function (knex) {
 
 		table.string('firstname').nullable()
 		table.string('lastname').nullable()
+		table.string('contact_number').nullable()
 
 		table.string('destination')
 
@@ -49,6 +50,7 @@ exports.up = async function (knex) {
 
 		table.string('firstname').nullable()
 		table.string('lastname').nullable()
+		table.string('contact_number').nullable()
 
 		table
 			.integer('est_id')

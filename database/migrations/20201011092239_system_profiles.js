@@ -30,8 +30,6 @@ exports.up = async function (knex) {
 		table.string('contactnumber')
 		table.specificType('image', 'longtext')
 
-		table.string('position').nullable()
-
 		table
 			.integer('account_id')
 			.unsigned()
