@@ -11,7 +11,7 @@ exports.up = async function (knex) {
 		table.string('street')
 		table.string('telephone_number')
 		table.string('est_owner')
-
+		table.specificType('image', 'longtext')
 		table
 			.integer('account_id')
 			.unsigned()
@@ -29,7 +29,7 @@ exports.up = async function (knex) {
 		table.date('birthday')
 		table.string('contactnumber')
 		table.specificType('image', 'longtext')
-
+		table.boolean('isActive').defaultTo(false)
 		table
 			.integer('account_id')
 			.unsigned()
@@ -44,11 +44,20 @@ exports.up = async function (knex) {
 		table.string('house_lot_number')
 		table.string('barangay')
 		table.string('city')
+
 		table
 			.integer('account_id')
 			.unsigned()
 			.references('account_id')
 			.inTable(tableNames.accounts_table)
+			.onDelete('CASCADE')
+			.index()
+
+		table
+			.integer('user_id')
+			.unsigned()
+			.references('user_id')
+			.inTable(tableNames.user_profile)
 			.onDelete('CASCADE')
 			.index()
 	})

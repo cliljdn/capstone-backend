@@ -24,7 +24,7 @@ class EmployeeScanned extends Model {
 			},
 
 			scannedIndiv: {
-				relation: Model.HasManyRelation,
+				relation: Model.HasOneRelation,
 				modelClass: () => UserProfile,
 				join: {
 					from: tableConstants.employee_scanned + '.account_id',

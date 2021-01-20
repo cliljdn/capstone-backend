@@ -17,16 +17,18 @@ class UserProfile extends Model {
 	}
 
 	static get relationMappings() {
-		const Passengers = require('./travelhistory.model')
+		const TravelHistory = require('./travelhistory.model')
 		const Establishment = require('./establishment.model')
+		const Vechicle = require('./Vehicle.model')
 
 		return {
-			getNames: {
-				relation: Model.HasManyRelation,
-				modelClass: () => Passengers,
+			DriverPassenger: {
+				relation: Model.HasOneRelation,
+				modelClass: () => TravelHistory,
 
 				join: {
-					from: tableNames.user_profile + '.account_id',
+					from: this.tableName + '.account_id',
+
 					to: tableNames.travel_history + '.account_id',
 				},
 			},
