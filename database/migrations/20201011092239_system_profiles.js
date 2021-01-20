@@ -29,7 +29,7 @@ exports.up = async function (knex) {
 		table.date('birthday')
 		table.string('contactnumber')
 		table.specificType('image', 'longtext')
-		table.boolean('isActive').defaultTo(false)
+		table.boolean('isActive').defaultTo(true)
 		table
 			.integer('account_id')
 			.unsigned()
