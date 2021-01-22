@@ -79,6 +79,15 @@ exports.up = async function (knex) {
 		table.time('time_entered')
 		table.date('date_entered')
 	})
+
+	await knex.schema.createTable(tableNames.references, function (table) {
+		table.increments('id').notNullable()
+
+		table.string('routes').nullable()
+		table.string('destination').nullable()
+		table.string('city').nullable()
+		table.string('barangay').nullable()
+	})
 }
 
 /**
@@ -87,6 +96,7 @@ exports.up = async function (knex) {
  */
 
 exports.down = async function (knex) {
+	await knex.schema.dropTableIfExists(tableNames.references)
 	await knex.schema.dropTableIfExists(tableNames.employee_scanned)
 	await knex.schema.dropTableIfExists(tableNames.travel_history)
 }
