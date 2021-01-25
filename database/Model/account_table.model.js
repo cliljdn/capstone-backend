@@ -43,6 +43,14 @@ class Accounts extends Model {
 				},
 			},
 
+			EstProfile: {
+				relation: Model.BelongsToOneRelation,
+				modelClass: () => Establishments,
+				join: {
+					from: this.tableName + '.account_id',
+					to: tableNames.establishments + '.account_id',
+				},
+			},
 			// Employee,
 		}
 	}
