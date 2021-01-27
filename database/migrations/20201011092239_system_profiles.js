@@ -65,7 +65,6 @@ exports.up = async function (knex) {
 	await knex.schema.createTable(tableNames.vehicle_table, function (table) {
 		table.string('plate_number').primary().notNullable()
 		table.string('color')
-		table.string('vehicle_type')
 		table.string('body_number')
 		table.string('vehicle_route')
 		table.boolean('isActive')
@@ -78,20 +77,10 @@ exports.up = async function (knex) {
 			.index()
 	})
 
-	await knex.schema.createTable(tableNames.employee_sched, function (table) {
-		table.increments('sched_id').notNullable()
-
-		table
-			.integer('user_id')
-			.unsigned()
-			.references('user_id')
-			.inTable(tableNames.user_profile)
-			.onDelete('CASCADE')
-			.index()
-
-		table.time('time_in')
-		table.time('time_out')
-		table.date('date_occur')
+	await knex.schema.createTable(tableNames.vehicle_routes, function (table) {
+		table.string('route_id').primary().notNullable()
+		table.string('vr_routes')
+		table.string('jeep_color')
 	})
 }
 
@@ -101,7 +90,7 @@ exports.up = async function (knex) {
  */
 
 exports.down = async function (knex) {
-	await knex.schema.dropTableIfExists(tableNames.employee_sched)
+	await knex.schema.dropTableIfExists(tableNames.vehicle_routes)
 	await knex.schema.dropTableIfExists(tableNames.address_table)
 	await knex.schema.dropTableIfExists(tableNames.vehicle_table)
 	await knex.schema.dropTableIfExists(tableNames.user_profile)
