@@ -1,7 +1,7 @@
 const { Model } = require('objection')
 const tableConstants = require('../../lib/contants/TableNames')
 
-class AdressModel extends Model {
+class AddressModel extends Model {
 	static get tableName() {
 		return tableConstants.address_table
 	}
@@ -11,4 +11,4 @@ class AdressModel extends Model {
 	}
 }
 
-module.exports = AdressModel
+module.exports = AddressModel
