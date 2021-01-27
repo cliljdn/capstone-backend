@@ -64,7 +64,6 @@ exports.up = async function (knex) {
 
 	await knex.schema.createTable(tableNames.vehicle_table, function (table) {
 		table.string('plate_number').primary().notNullable()
-		table.string('color')
 		table.string('body_number')
 		table.string('vehicle_route')
 		table.boolean('isActive')
@@ -80,7 +79,6 @@ exports.up = async function (knex) {
 	await knex.schema.createTable(tableNames.vehicle_routes, function (table) {
 		table.increments('route_id').notNullable()
 		table.string('vr_routes')
-		table.string('jeep_color')
 	})
 }
 
