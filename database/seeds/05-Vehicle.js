@@ -15,7 +15,7 @@ exports.seed = function (knex) {
 					account_id: 3,
 				},
 				{
-					plate_number: 'PX223',
+					plate_number: 'PX2234',
 					color: 'Red',
 					vehicle_route: 'Kessing',
 					body_number: '2215',
@@ -33,7 +33,7 @@ exports.seed = function (knex) {
 				},
 
 				{
-					plate_number: 'PX22wew3',
+					plate_number: 'PX223',
 					color: 'hahaha',
 					vehicle_route: 'poland',
 					body_number: '2322',
@@ -60,7 +60,7 @@ exports.seed = function (knex) {
 				},
 
 				{
-					plate_number: 'PX244323',
+					plate_number: 'PX2443',
 					color: 'Grey',
 					vehicle_route: 'kamote',
 					body_number: '4442',
@@ -69,7 +69,7 @@ exports.seed = function (knex) {
 				},
 
 				{
-					plate_number: 'PX2244423',
+					plate_number: 'PX2245',
 					color: 'Violet',
 					vehicle_route: 'gago ka',
 					body_number: '2233',
@@ -78,7 +78,7 @@ exports.seed = function (knex) {
 				},
 
 				{
-					plate_number: 'PX2223',
+					plate_number: 'PX222',
 					color: 'Red',
 					vehicle_route: 'sana pumasa',
 					body_number: '2216',

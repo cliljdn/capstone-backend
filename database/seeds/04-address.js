@@ -42,6 +42,90 @@ exports.seed = function (knex) {
 					city: 'Olongapo',
 					account_id: 6,
 				},
+
+				{
+					house_lot_number: 'Blk 2 lot 16',
+					barangay: 'East bajac bajac',
+					city: 'Olongapo',
+					account_id: 7,
+				},
+
+				{
+					house_lot_number: 'Blk 2 lot 16',
+					barangay: 'East bajac bajac',
+					city: 'Olongapo',
+					account_id: 8,
+				},
+
+				{
+					house_lot_number: 'Blk 2 lot 16',
+					barangay: 'East bajac bajac',
+					city: 'Olongapo',
+					account_id: 9,
+				},
+
+				{
+					house_lot_number: 'Blk 2 lot 16',
+					barangay: 'East bajac bajac',
+					city: 'Olongapo',
+					account_id: 10,
+				},
+
+				{
+					house_lot_number: 'Blk 2 lot 16',
+					barangay: 'East bajac bajac',
+					city: 'Olongapo',
+					account_id: 11,
+				},
+
+				{
+					house_lot_number: 'Blk 2 lot 16',
+					barangay: 'East bajac bajac',
+					city: 'Olongapo',
+					account_id: 12,
+				},
+
+				{
+					house_lot_number: 'Blk 2 lot 16',
+					barangay: 'East bajac bajac',
+					city: 'Olongapo',
+					account_id: 13,
+				},
+
+				{
+					house_lot_number: 'Blk 2 lot 16',
+					barangay: 'East bajac bajac',
+					city: 'Olongapo',
+					account_id: 14,
+				},
+
+				{
+					house_lot_number: 'Blk 2 lot 16',
+					barangay: 'East bajac bajac',
+					city: 'Olongapo',
+					account_id: 15,
+				},
+
+				{
+					house_lot_number: 'Blk 2 lot 16',
+					barangay: 'East bajac bajac',
+					city: 'Olongapo',
+					account_id: 16,
+				},
+
+				{
+					house_lot_number: 'Blk 2 lot 16',
+					barangay: 'East bajac bajac',
+					city: 'Olongapo',
+					account_id: 17,
+				},
+
+				{
+					house_lot_number: 'Blk 2 lot 16',
+					barangay: 'East bajac bajac',
+					city: 'Olongapo',
+					account_id: 18,
+				},
 			])
 		})
 }

@@ -32,18 +32,6 @@ exports.seed = function (knex) {
 					account_type: 'Driver',
 					isActive: 1,
 				},
-				{
-					email: 'kamusta@gmail.com',
-					password: pass,
-					account_type: 'Establishment',
-					isActive: 1,
-				},
-				{
-					email: 'imokay@gmail.com',
-					password: pass,
-					account_type: 'Establishment',
-					isActive: 1,
-				},
 
 				{
 					email: 'akolangto@gmail.com',
@@ -69,6 +57,110 @@ exports.seed = function (knex) {
 					email: 'papasacapstone@gmail.com',
 					password: pass,
 					account_type: 'Individual',
+					isActive: 1,
+				},
+
+				{
+					email: 'kamustaangbuhay@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+
+				{
+					email: 'poypoypoy@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+
+				{
+					email: 'kamustakaokaylang@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+
+				{
+					email: 'hoyhello@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+
+				{
+					email: 'asanyungsabaw@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+
+				{
+					email: 'hoybakitako@gmail.com',
+					password: pass,
+					account_type: 'Driver',
+					isActive: 1,
+				},
+
+				{
+					email: 'malungkot@gmail.com',
+					password: pass,
+					account_type: 'Driver',
+					isActive: 1,
+				},
+
+				{
+					email: 'hindikoalam@gmail.com',
+					password: pass,
+					account_type: 'Driver',
+					isActive: 1,
+				},
+
+				{
+					email: 'okaysige@gmail.com',
+					password: pass,
+					account_type: 'Driver',
+					isActive: 1,
+				},
+
+				{
+					email: 'ingatka@gmail.com',
+					password: pass,
+					account_type: 'Driver',
+					isActive: 1,
+				},
+
+				{
+					email: 'kamusta@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+				{
+					email: 'imokay@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'indibiningging@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'poyingpoy@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'japanvsusa@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
 					isActive: 1,
 				},
 			])

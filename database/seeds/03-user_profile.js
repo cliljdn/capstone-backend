@@ -87,6 +87,78 @@ exports.seed = function (knex) {
 					contactnumber: '090783837734',
 					account_id: 10,
 				},
+
+				{
+					firstname: 'thirty',
+					lastname: 'four',
+					middlename: 'hau',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 11,
+				},
+
+				{
+					firstname: 'thirty',
+					lastname: 'four',
+					middlename: 'hau',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 12,
+				},
+
+				{
+					firstname: 'thirty',
+					lastname: 'four',
+					middlename: 'hau',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 13,
+				},
+
+				{
+					firstname: 'thirty',
+					lastname: 'four',
+					middlename: 'hau',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 14,
+				},
+
+				{
+					firstname: 'thirty',
+					lastname: 'four',
+					middlename: 'hau',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 15,
+				},
+
+				{
+					firstname: 'thirty',
+					lastname: 'four',
+					middlename: 'hau',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 16,
+				},
+
+				{
+					firstname: 'thirty',
+					lastname: 'four',
+					middlename: 'hau',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 17,
+				},
+
+				{
+					firstname: 'thirty',
+					lastname: 'four',
+					middlename: 'hau',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 18,
+				},
 			])
 		})
 }
