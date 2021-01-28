@@ -80,62 +80,62 @@ exports.seed = function (knex) {
 					account_id: 9,
 				},
 				{
-					firstname: 'thirty',
-					lastname: 'four',
-					middlename: 'hau',
+					firstname: 'Kamote',
+					lastname: 'kaba',
+					middlename: 'hindi no',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
 					account_id: 10,
 				},
 
 				{
-					firstname: 'thirty',
-					lastname: 'four',
-					middlename: 'hau',
+					firstname: 'okay sige',
+					lastname: 'kamusta',
+					middlename: 'okaynaman',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
 					account_id: 11,
 				},
 
 				{
-					firstname: 'thirty',
-					lastname: 'four',
-					middlename: 'hau',
+					firstname: 'walangmagawa',
+					lastname: 'bakit',
+					middlename: 'tamad',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
 					account_id: 12,
 				},
 
 				{
-					firstname: 'thirty',
+					firstname: 'wowie',
 					lastname: 'four',
-					middlename: 'hau',
+					middlename: 'wsdad',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
 					account_id: 13,
 				},
 
 				{
-					firstname: 'thirty',
-					lastname: 'four',
-					middlename: 'hau',
+					firstname: 'wanpipti',
+					lastname: 'open',
+					middlename: 'nyaw',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
 					account_id: 14,
 				},
 
 				{
-					firstname: 'thirty',
-					lastname: 'four',
-					middlename: 'hau',
+					firstname: 'wowow',
+					lastname: 'ngaleng',
+					middlename: 'goods',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
 					account_id: 15,
 				},
 
 				{
-					firstname: 'thirty',
-					lastname: 'four',
+					firstname: 'datwo',
+					lastname: 'kamot',
 					middlename: 'hau',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
@@ -143,21 +143,66 @@ exports.seed = function (knex) {
 				},
 
 				{
-					firstname: 'thirty',
-					lastname: 'four',
-					middlename: 'hau',
+					firstname: 'talaga',
+					lastname: 'ohyesdaddy',
+					middlename: 'has',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
 					account_id: 17,
 				},
 
 				{
-					firstname: 'thirty',
-					lastname: 'four',
-					middlename: 'hau',
+					firstname: 'something32',
+					lastname: 'pompi',
+					middlename: 'hapowpowu',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
 					account_id: 18,
+				},
+
+				{
+					firstname: 'jumping',
+					lastname: 'jack',
+					middlename: 'stalk',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 19,
+				},
+
+				{
+					firstname: 'qeqne',
+					lastname: 'poity',
+					middlename: 'sasasa',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 20,
+				},
+
+				{
+					firstname: 'eren',
+					lastname: 'yaeger',
+					middlename: 'opik',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 21,
+				},
+
+				{
+					firstname: 'uninszs',
+					lastname: 'yunixs',
+					middlename: 'poytqw',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 22,
+				},
+
+				{
+					firstname: 'petiks',
+					lastname: 'bagsak',
+					middlename: 'tanga',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 23,
 				},
 			])
 		})
