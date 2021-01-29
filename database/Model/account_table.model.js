@@ -14,7 +14,7 @@ class Accounts extends Model {
 		const UserProfile = require('./UserProfile.model')
 		const AddressModel = require('./Address.model')
 		const EmployeeScanned = require('./EmployeeScanned.model')
-		const Establishments = require('./establishment.model')
+		const Establishment = require('./establishment.model')
 		return {
 			UserProfile: {
 				relation: Model.HasOneRelation,
@@ -44,10 +44,10 @@ class Accounts extends Model {
 			},
 
 			EstProfile: {
-				relation: Model.BelongsToOneRelation,
-				modelClass: () => Establishments,
+				relation: Model.HasOneRelation,
+				modelClass: Establishment,
 				join: {
-					from: this.tableName + '.account_id',
+					from: tableNames.accounts_table + '.account_id',
 					to: tableNames.establishments + '.account_id',
 				},
 			},
