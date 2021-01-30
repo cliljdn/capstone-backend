@@ -15,7 +15,7 @@ class EmployeeScanned extends Model {
 		const UserProfile = require('./UserProfile.model')
 		return {
 			estList: {
-				relation: Model.HasManyRelation,
+				relation: Model.HasOneRelation,
 				modelClass: () => Establishment,
 				join: {
 					from: tableConstants.employee_scanned + '.employee_id',
