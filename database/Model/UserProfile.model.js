@@ -23,8 +23,8 @@ class UserProfile extends Model {
 
 		return {
 			DriverPassenger: {
-				relation: Model.HasOneRelation,
-				modelClass: () => TravelHistory,
+				relation: Model.HasManyRelation,
+				modelClass: TravelHistory,
 
 				join: {
 					from: this.tableName + '.account_id',
