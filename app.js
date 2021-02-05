@@ -6,8 +6,8 @@ const helmet = require('helmet')
 const cors = require('cors')
 const compression = require('compression')
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.json({ limit: '50mb' }))
+app.use(express.urlencoded({ limit: '50mb' }))
 app.use(
 	cors({
 		'Access-Control-Allow-Origin': '*',
