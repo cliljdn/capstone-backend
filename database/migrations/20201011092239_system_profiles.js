@@ -11,7 +11,7 @@ exports.up = async function (knex) {
 		table.string('street')
 		table.string('telephone_number')
 		table.string('est_owner')
-		table.specificType('image', 'longtext')
+		table.specificType('image', 'longblob')
 		table
 			.integer('account_id')
 			.unsigned()
@@ -28,7 +28,7 @@ exports.up = async function (knex) {
 		table.string('middlename')
 		table.date('birthday')
 		table.string('contactnumber')
-		table.specificType('image', 'longtext')
+		table.specificType('image', 'longblob')
 		table.boolean('isActive').defaultTo(true)
 		table
 			.integer('account_id')
