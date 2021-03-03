@@ -32,6 +32,15 @@ class EmployeeScanned extends Model {
 				},
 			},
 
+			estName: {
+				relation: Model.HasOneRelation,
+				modelClass: () => Establishment,
+				join: {
+					from: tableConstants.employee_scanned + '.est_id',
+					to: tableConstants.establishments + '.est_id',
+				},
+			},
+
 			presentEmployee: {
 				relation: Model.HasOneRelation,
 				modelClass: () => UserProfile,

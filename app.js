@@ -16,19 +16,22 @@ app.use(
 app.use(helmet())
 // app.use(morgan('tiny'))
 
-app.use(
-	compression({
-		level: 6,
-		threshold: 100 * 1000,
-		filter: (req, res) => {
-			if (req.headers['x-no-compression']) {
-				return false
-			}
+// app.use(
+// 	compression({
+// 		level: 6,
+// 		threshold: 100 * 1000,
+// 		filter: (req, res) => {
+// 			if (req.headers['x-no-compression']) {
+// 				return false
+// 			}
 
-			return compression.filter(req, res)
-		},
-	})
-)
+// 			return compression.filter(req, res)
+// 		},
+// 	})
+// )
+
+app.use(compression())
+
 //middlewares
 const middlewares = require('./middlewares/middlewares')
 
