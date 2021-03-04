@@ -25,20 +25,20 @@ module.exports = {
 		},
 	},
 
-	// production: {
-	// 	client: 'mysql',
-	// 	connection: {
-	// 		host: process.env.DB_HOST,
-	// 		database: 'capstonedb',
-	// 		user: 'cliljdn',
-	// 		password: 'jaudian29',
-	// 	},
-	// 	pool: {
-	// 		min: 2,
-	// 		max: 10,
-	// 	},
-	// 	migrations: {
-	// 		tableName: 'knex_migrations',
-	// 	},
-	// },
+	production: {
+		client: 'mysql',
+		connection: {
+			host: process.env.DB_HOST,
+			database: 'capstonedb',
+			user: 'cliljdn',
+			password: 'jaudian29',
+		},
+		pool: {
+			min: 2,
+			max: 10,
+		},
+		migrations: {
+			tableName: 'knex_migrations',
+		},
+	},
 }

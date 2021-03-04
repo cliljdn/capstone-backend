@@ -14,6 +14,7 @@ exports.seed = function (knex) {
 					contactnumber: '090783832454',
 					account_id: 1,
 				},
+
 				{
 					firstname: 'Yuu',
 					lastname: 'Asakura',
@@ -46,6 +47,7 @@ exports.seed = function (knex) {
 					contactnumber: '090783837734',
 					account_id: 5,
 				},
+
 				{
 					firstname: 'Greg',
 					lastname: 'Holt',
@@ -161,21 +163,12 @@ exports.seed = function (knex) {
 				},
 
 				{
-					firstname: 'jumping',
-					lastname: 'jack',
-					middlename: 'stalk',
-					birthday: '1997-03-12',
-					contactnumber: '090783837734',
-					account_id: 19,
-				},
-
-				{
 					firstname: 'qeqne',
 					lastname: 'poity',
 					middlename: 'sasasa',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
-					account_id: 20,
+					account_id: 25,
 				},
 
 				{
@@ -184,7 +177,7 @@ exports.seed = function (knex) {
 					middlename: 'opik',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
-					account_id: 21,
+					account_id: 26,
 				},
 
 				{
@@ -193,7 +186,7 @@ exports.seed = function (knex) {
 					middlename: 'poytqw',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
-					account_id: 22,
+					account_id: 27,
 				},
 
 				{
@@ -202,7 +195,16 @@ exports.seed = function (knex) {
 					middlename: 'tanga',
 					birthday: '1997-03-12',
 					contactnumber: '090783837734',
-					account_id: 23,
+					account_id: 28,
+				},
+
+				{
+					firstname: 'petiks',
+					lastname: 'bagsak',
+					middlename: 'tanga',
+					birthday: '1997-03-12',
+					contactnumber: '090783837734',
+					account_id: 29,
 				},
 			])
 		})

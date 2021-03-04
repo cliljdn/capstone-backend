@@ -26,6 +26,7 @@ exports.seed = function (knex) {
 					account_type: 'Driver',
 					isActive: 1,
 				},
+
 				{
 					email: 'nararahuyo@gmail.com',
 					password: pass,
@@ -39,13 +40,14 @@ exports.seed = function (knex) {
 					account_type: 'Individual',
 					isActive: 1,
 				},
+				//7
 				{
 					email: 'baronlangmalakas@gmail.com',
 					password: pass,
 					account_type: 'Individual',
 					isActive: 1,
 				},
-
+				//8
 				{
 					email: 'sobranglakas@gmail.com',
 					password: pass,
@@ -130,6 +132,7 @@ exports.seed = function (knex) {
 					isActive: 1,
 				},
 
+				//20
 				{
 					email: 'kamusta@gmail.com',
 					password: pass,
@@ -159,6 +162,183 @@ exports.seed = function (knex) {
 
 				{
 					email: 'japanvsusa@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				//24 ++
+				{
+					email: 'heiswe@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+
+				{
+					email: 'parokyaniedgar@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+
+				{
+					email: 'markjayson@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+
+				{
+					email: 'warnakulahewa@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+
+				{
+					email: 'scanscancan@gmail.com',
+					password: pass,
+					account_type: 'Individual',
+					isActive: 1,
+				},
+				//29 ++
+
+				{
+					email: 'julies@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'southstar@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'mongotinapay@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'dunkindonut@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'highgrounds@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'mineski@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'teencee@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'kukupalad@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'ravencarry@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'gabbidota@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'mineskijessie@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'mineskivash@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'mrdonut@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'cocomelon@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'mrlemon@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'happycup@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'dairyqueen@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'zagu@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'playstation@gmail.com',
+					password: pass,
+					account_type: 'Establishment',
+					isActive: 1,
+				},
+
+				{
+					email: 'datablitz@gmail.com',
 					password: pass,
 					account_type: 'Establishment',
 					isActive: 1,
